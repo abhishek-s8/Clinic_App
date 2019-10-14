@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "60361016008-h5i8sag3m8tssm6ear34qatn7dro16r0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clinicapp",
+            "certificate_hash": "31d589cbaef476ca98800f76fbf958975d4c9154"
+          }
+        },
+        {
           "client_id": "60361016008-jrh194s90ipvffe4ruk53u4ofq6r4u1h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
