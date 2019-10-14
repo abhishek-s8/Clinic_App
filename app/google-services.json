@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "60361016008",
+    "firebase_url": "https://seg2105clinicapp.firebaseio.com",
+    "project_id": "seg2105clinicapp",
+    "storage_bucket": "seg2105clinicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60361016008:android:12783ddda972df40581bfd",
+        "android_client_info": {
+          "package_name": "com.example.clinicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60361016008-jrh194s90ipvffe4ruk53u4ofq6r4u1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clinicapp",
+            "certificate_hash": "a0a52799be700bd40d720392525d938b333fb177"
+          }
+        },
+        {
+          "client_id": "60361016008-ppg1b63e3012t7a42h8kc1n65oog4he1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABOUXkFEePrEKbOQFGIf76xQ5T0a4e_hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60361016008-ppg1b63e3012t7a42h8kc1n65oog4he1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
