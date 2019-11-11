@@ -4,33 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignupEmployee">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
+        android:background="#662196F3"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creating Employee Account"
+            android:textSize="32sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:visibility="visible" />
-
-        <TextView
-            android:id="@+id/Header"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="LOGIN"
-            android:textSize="32dp" />
+            android:layout_height="30sp" />
 
         <EditText
-            android:id="@+id/Username"
+            android:id="@+id/UserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Username ID"
+            android:hint="User Name"
             android:inputType="textPersonName" />
 
         <EditText
@@ -39,21 +38,23 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/LoginButton"
-            style="@style/Widget.AppCompat.Button.Colored"
+        <EditText
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOGIN" />
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/SignUp"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/DoneBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NOT A MEMBER YET? SIGN UP HERE" />
-
+            android:background="#C2185B"
+            android:onClick="doneClick"
+            android:text="Done"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

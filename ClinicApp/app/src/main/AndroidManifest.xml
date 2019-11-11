@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.clinicapp.ShowAccounts"></activity>
+        <activity android:name="com.example.clinicapp.AccountManager" />
+        <activity android:name="com.example.clinicapp.DeleteService" />
+        <activity android:name="com.example.clinicapp.EditService" />
+        <activity android:name="com.example.clinicapp.AddService" />
+        <activity android:name="com.example.clinicapp.SignupEmployee" />
+        <activity android:name="com.example.clinicapp.SignupClient" />
+        <activity android:name="com.example.clinicapp.LoginOptions" />
+        <activity android:name="com.example.clinicapp.EmployeeLogin" />
+        <activity android:name="com.example.clinicapp.AdminLogin" />
+        <activity android:name="com.example.clinicapp.ClientLogin" />
+        <activity android:name="com.example.clinicapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
