@@ -1,6 +1,6 @@
 package com.example.clinicapp;
 
-public class Admin {
+public class Admin implements Account{
     private String password;
     private String name;
     private String userName;

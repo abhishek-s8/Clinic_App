@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1ace099-3dfd-4665-97e4-1cac1c962e3b" name="Default Changelist" comment="" />
+    <list default="true" id="e1ace099-3dfd-4665-97e4-1cac1c962e3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.circleci/Config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/RoleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AdminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AdminLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ClientLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ClientLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clinic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clinic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EmployeeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EmployeeLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/LoginOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/LoginOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ShowAccounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ShowAccounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/myDBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinicapp/myDBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/admin_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/admin_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/client_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/client_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/employee_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/employee_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/signup_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/signup_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,8 +42,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_27" />
   <component name="ExternalProjectsManager">
@@ -20,18 +52,106 @@
       </state>
     </system>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditEmployeeServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="68" column="57" lean-forward="true" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>edit</find>
+      <find>show</find>
+      <find>Clients</find>
+      <find>showAll</find>
+      <find>eExist</find>
+      <find>update</find>
+      <find>remove</find>
+      <find>showService</find>
+      <find>login</find>
+      <find>nameOfClinic</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ShowAccounts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/myDBHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddWorkingHour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddWorkingHourEnd.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteWorkingHour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditEmployeeProfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Employee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Service.java" />
+        <option value="$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheAdminTest.java" />
+        <option value="$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheRoleTest.java" />
+        <option value="$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheClientsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/add_working_hour.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/add_working_hour_end.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/client_login.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/delete_working_hour.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/edit_employee_profiles.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/edit_services_employee.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/edit_working_hour.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/admin_login.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/employee_login.xml" />
+        <option value="$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheEmployeeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/signup_employee.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/AdminLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/ClientLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clients.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clinic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditEmployeeServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/EmployeeLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/LoginOptions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupEmployee.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1050" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -56,23 +176,16 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="clinicapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ClinicApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="clinicapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SEG2105_project-master/SEG2105_project-master/SEG_AndroidProject/app" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -87,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -148,6 +261,160 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TheAdminTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.example.clinicapp.TheAdminTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TheEmployeeTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.example.clinicapp.TheEmployeeTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TheRoleTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.example.clinicapp.TheRoleTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android Instrumented Tests.TheEmployeeTest" />
+        <item itemvalue="Android Instrumented Tests.TheRoleTest" />
+        <item itemvalue="Android Instrumented Tests.TheAdminTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -162,30 +429,484 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TheRoleTest - 2019.11.22 at 21h 22m 16s.xml">
+      <configuration name="TheRoleTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheAdminTest - 2019.11.22 at 21h 22m 42s.xml">
+      <configuration name="TheAdminTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheAdminTest - 2019.11.22 at 21h 27m 19s.xml">
+      <configuration name="TheAdminTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheAdminTest - 2019.11.22 at 21h 27m 36s.xml">
+      <configuration name="TheAdminTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheAdminTest - 2019.11.22 at 21h 30m 33s.xml">
+      <configuration name="TheAdminTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheRoleTest - 2019.11.22 at 21h 30m 52s.xml">
+      <configuration name="TheRoleTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TheEmployeeTest - 2019.11.22 at 21h 31m 05s.xml">
+      <configuration name="TheEmployeeTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.3295302" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Logcat" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.3286119" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18456376" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3286119" />
+      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.37252125" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.45042494" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1818792" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.45042494" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.3286119" />
+      <window_info anchor="bottom" id="Logcat" order="4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.12322946" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
+      <window_info anchor="right" id="Preview" order="0" />
+      <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/ExampleInstrumentedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/myDBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-670">
+          <caret line="419" lean-forward="true" selection-start-line="419" selection-end-line="419" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheRoleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheAdminTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheClientsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/account_manager.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/add_service.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/add_working_hour_end.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/client_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/delete_service.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/delete_working_hour.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_employee_profiles.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_service.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_services_employee.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_working_hour.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/show_accounts.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/login_options.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/signup_client.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/add_working_hour.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/admin_login.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/employee_login.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/example/clinicapp/TheEmployeeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/signup_employee.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="81" column="81" selection-start-line="81" selection-start-column="81" selection-end-line="81" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddWorkingHour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/AddWorkingHourEnd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/AdminLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/ClientLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clients.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Clinic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/DeleteWorkingHour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-991">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditEmployeeProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4340">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/EmployeeLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="242" column="50" lean-forward="true" selection-start-line="242" selection-start-column="50" selection-end-line="242" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/LoginOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1144">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/ShowAccounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-549">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupEmployee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4524">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/SignupClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3247">
+          <caret line="197" column="15" selection-start-line="197" selection-start-column="15" selection-end-line="197" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/clinicapp/EditEmployeeServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="68" column="57" lean-forward="true" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

@@ -21,65 +21,70 @@ public class AddService extends AppCompatActivity {
 
     public void finishClick(View view)
     {
+        myDBHelper dataBase = new myDBHelper(this);
+
         doctor = (RadioButton)findViewById(R.id.doctorBtn);
         staff = (RadioButton)findViewById(R.id.staffBtn);
         nurse = (RadioButton)findViewById(R.id.nurseBtn);
 
-        Clinic clinic = new Clinic();
-
         EditText userInput = (EditText)findViewById(R.id.addText);
 
-        if(userInput.getText().toString().equals(""))
-        {
-            Toast.makeText(AddService.this,"No Service Was Entered", Toast.LENGTH_LONG).show();
+        if(userInput.getText().toString().equals("")){
+            Toast.makeText(AddService.this,"No service was inputted!", Toast.LENGTH_LONG).show();
+
+            dataBase.close();
             finish();
         }
-        else if(nurse.isChecked())
-        {
+        else if(nurse.isChecked()){
 
-            boolean success = clinic.addService(userInput.getText().toString()," by nurse");
+            boolean success = dataBase.addService(userInput.getText().toString(), " by nurse");
 
-            if(success)
-            {
-                Toast.makeText(AddService.this,"Complete",Toast.LENGTH_LONG).show();
+            if(success){
+                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
             }
-            else {
-                Toast.makeText(AddService.this,"This service has exist",Toast.LENGTH_LONG).show();
+            else{
+                Toast.makeText(AddService.this,"This service has exist", Toast.LENGTH_LONG).show();
             }
 
+            dataBase.close();
             finish();
         }
-        else if(doctor.isChecked())
-        {
-            boolean success = clinic.addService(userInput.getText().toString(), " by doctor");
+        else if(doctor.isChecked()){
 
-            if(success)
-            {
-                Toast.makeText(AddService.this,"Complete",Toast.LENGTH_LONG).show();
+            boolean success=dataBase.addService(userInput.getText().toString(), " by doctor");
+
+            if(success){
+                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(AddService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
 
+            dataBase.close();
             finish();
         }
-        else if(staff.isChecked())
-        {
-            boolean success = clinic.addService(userInput.getText().toString(), " by staff");
+        else if(staff.isChecked()){
 
-            if(success)
-            {
-                Toast.makeText(AddService.this, "Complete",Toast.LENGTH_LONG).show();
+            boolean success=dataBase.addService(userInput.getText().toString(), " by staff");
+
+            if(success){
+                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(AddService.this,"This service has exist", Toast.LENGTH_LONG).show();
             }
+
+            dataBase.close();
             finish();
         }
         else{
-            Toast.makeText(AddService.this,"A role was NOT chosen",Toast.LENGTH_LONG).show();
+
+            Toast.makeText(AddService.this, "No role was chosen for this service.", Toast.LENGTH_LONG).show();
+
+            dataBase.close();
             finish();
         }
+
     }
 
     public void cancelClick(View view)

@@ -3,28 +3,29 @@ import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.ArrayList;
-import java.util.List;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText password;
+    private EditText userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        myDBHelper dataBase=new myDBHelper(this);
     }
     public void loginOnClick(View view){
-        EditText userName = (EditText)findViewById(R.id.userName);
-        EditText password = (EditText)findViewById(R.id.password);
+        userName = (EditText)findViewById(R.id.userName);
+        password = (EditText)findViewById(R.id.password);
 
         myDBHelper dataBase=new myDBHelper(this);
-        Admin admin= dataBase.adminExist(userName.getText().toString(), password.getText().toString());
+        Admin admin=dataBase.adminExist(userName.getText().toString(), password.getText().toString());
         Clients client=dataBase.clientExist(userName.getText().toString(), password.getText().toString());
-        Employee employee =dataBase.employeeExist(userName.getText().toString(), password.getText().toString());
+        Employee employee=dataBase.employeeExist(userName.getText().toString(), password.getText().toString());
 
         if (client == null && employee == null && admin == null)
         {
@@ -80,25 +81,21 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder theBuilder=new AlertDialog.Builder(this);
         theBuilder.setTitle("All services provided by clinic");
 
-        Clinic clinic = new Clinic();
-        String service = "";
-        ArrayList<List> services = clinic.getServices();
+        myDBHelper dataBase=new myDBHelper(this);
+        String[] services=dataBase.showServices();
+        String service="";
 
-        for(int i = 0; i < services.size(); i++)
-        {
+        for(int i=0;i<services.length;i++) {
 
             service+=i+1;
             service+=". ";
 
-            if(i != services.size())
+            if (i!=services.length)
             {
-                service+=services.get(i).get(0);
-                service+=services.get(i).get(1);
+                service+=services[i];
                 service+="\n";
-            }
-            else {
-                service+=services.get(i).get(0);
-                service+=services.get(i).get(1);
+            } else {
+                service+=services[i];
             }
         }
 
@@ -115,7 +112,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createOnClick(View view) {
-        Intent temp=new Intent(this, LoginOptions.class);
-        startActivity(temp);
+        EditText password = (EditText)findViewById(R.id.password);
+        EditText userName = (EditText)findViewById(R.id.userName);
+        userName.setText("");
+        password.setText("");
+        Intent intent=new Intent(this,LoginOptions.class);
+        startActivity(intent);
     }
 }

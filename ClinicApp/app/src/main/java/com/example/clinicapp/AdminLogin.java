@@ -17,16 +17,30 @@ public class AdminLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_login);
 
-        Intent var = getIntent();
-        String name = var.getStringExtra("Name");
+        Intent var=getIntent();
+        String name=var.getStringExtra("Name");
 
-        TextView textView = (TextView)findViewById(R.id.textView5);
-        textView.setText("Welcome "+name+"! You are logged in as Admin.");
+        TextView textView = (TextView)findViewById(R.id.textView10);
+        TextView welcome = (TextView)findViewById(R.id.textView11);
+        welcome.setText("Welcome "+name+"!");
+        textView.setText("You are logged in as Admin.");
     }
 
     public void editClick(View view)
     {
         Intent var=new Intent(this, EditService.class);
+        startActivity(var);
+    }
+
+    public void showClick(View view)
+    {
+        Intent var=new Intent(this, ShowAccounts.class);
+        startActivity(var);
+    }
+
+    public void accountClick(View view)
+    {
+        Intent var=new Intent(this, AccountManager.class);
         startActivity(var);
     }
 
@@ -42,52 +56,42 @@ public class AdminLogin extends AppCompatActivity {
         startActivity(var);
     }
 
-    public void showClick(View view)
-    {
-        Intent var =new Intent(this, ShowAccounts.class);
-        startActivity(var);
-    }
-
-    public void accountClick(View view)
-    {
-        Intent var=new Intent(this, AccountManager.class);
-        startActivity(var);
-    }
-
     public void servicesClick(View view)
     {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Services provided:");
+        AlertDialog.Builder theBuilder=new AlertDialog.Builder(this);
+        theBuilder.setTitle("Services provided:");
+        String service="";
 
-        String service = "";
-        Clinic theClinic=new Clinic();
-        ArrayList<List> theServices=theClinic.getServices();
+        myDBHelper dataBase=new myDBHelper(this);
+        String[] services=dataBase.showServices();
 
-        for (int i=0; i<theServices.size(); i++)
+        for(int i=0; i<services.length;i++)
         {
             service+=i+1;
             service+=". ";
 
-            if (i!=theServices.size())
+            if(i!=services.length)
             {
-                service += theServices.get(i).get(0);
-                service += theServices.get(i).get(1);
-                service += "\n";
+                service+=services[i];
+                service+="\n";
             }
-            else {
-                service += theServices.get(i).get(0);
-                service += theServices.get(i).get(1);
+            else{
+                service+=services[i];
             }
         }
-        builder.setMessage(service);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+
+        theBuilder.setMessage(service);
+
+        theBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
             }
         });
-        AlertDialog b = builder.create();
-        b.show();
+
+        AlertDialog build=theBuilder.create();
+
+        build.show();
     }
 
 }

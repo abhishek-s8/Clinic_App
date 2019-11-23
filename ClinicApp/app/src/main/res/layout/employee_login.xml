@@ -9,14 +9,160 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#662196F3"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#662196F3">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#303F9F"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp" />
+            android:gravity="center"
+            android:textColor="#303F9F"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#303F9F"
+            android:textSize="14sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:textColor="#303F9F"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:background="#7B1FA2"
+                android:onClick="EYSOnClick"
+                android:textAllCaps="false"
+                android:text="Edit Service You Provide" />
+
+            <Button
+                android:id="@+id/changeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#C2185B"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:onClick="editProfileOnClick"
+                android:text="Edit Your Profile" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:background="#C2185B"
+                android:onClick="ShowServices"
+                android:textAllCaps="false"
+                android:text="Show All Services" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:onClick="SYSOnClick"
+                android:background="#7B1FA2"
+                android:textColor="#FFFFFF"
+                android:text="Show All Your Services" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="#7B1FA2"
+                android:onClick="addWorkingHour"
+                android:text="Add Working Hours" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#C2185B"
+                android:onClick="showWorkingHours"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:text="Show Working Hours" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:onClick="editWorkingHour"
+                android:background="#C2185B"
+                android:textColor="#FFFFFF"
+                android:text="Edit Working Hours" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#7B1FA2"
+                android:textAllCaps="false"
+                android:onClick="deleteWorkingHour"
+                android:textColor="#FFFFFF"
+                android:text="Delete Working Hours" />
+
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
