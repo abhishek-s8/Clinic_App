@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientLogin">
+    tools:context=".DeleteWorkingHour">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#662196F3"
         android:gravity="center"
+        android:background="#662196F3"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView5"
+        <CalendarView
+            android:id="@+id/calendarView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#303F9F"
-            android:textSize="30sp" />
+            android:layout_height="310dp"
+            android:maxDate="12/31/2200"
+            android:minDate="01/01/2000" />
 
-        <TextView
-            android:id="@+id/textView16"
+        <CalendarView
+            android:id="@+id/calendarView4"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:maxDate="12/31/2200"
+            android:minDate="01/01/2000" />
+
+        <Button
+            android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#303F9F"
-            android:textSize="25sp" />
+            android:onClick="deleteWH"
+            android:background="#C2185B"
+            android:textColor="#FFFFFF"
+            android:text="Finish" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

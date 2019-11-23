@@ -22,6 +22,8 @@ public class EditService extends AppCompatActivity {
 
     public void finishClick(View view)
     {
+        myDBHelper dataBase = new myDBHelper(this);
+
         nurse = (RadioButton)findViewById(R.id.nurseBtn);
         doctor = (RadioButton)findViewById(R.id.doctorBtn);
         staff = (RadioButton)findViewById(R.id.staffBtn);
@@ -29,58 +31,60 @@ public class EditService extends AppCompatActivity {
         EditText Input1 = (EditText) findViewById(R.id.deleteText);
         EditText Input2 = (EditText) findViewById(R.id.newService);
 
-        Clinic clinic = new Clinic();
-        if(Input1.getText().toString().equals("")||Input2.getText().toString().equals(""))
-        {
+        if(Input1.getText().toString().equals("")||Input2.getText().toString().equals("")){
 
-            Toast.makeText(EditService.this,"No Service Entered",Toast.LENGTH_LONG).show();
+            Toast.makeText(EditService.this,"You haven't input service", Toast.LENGTH_LONG).show();
+
+            dataBase.close();
             finish();
         }
-        else if(nurse.isChecked())
-        {
+        else if(nurse.isChecked()){
 
-            boolean success=clinic.editService(Input1.getText().toString(),Input2.getText().toString()," by nurse");
+            boolean success=dataBase.editService(Input1.getText().toString(),Input2.getText().toString(), " by nurse");
 
-            if(success)
-            {
+            if(success){
                 Toast.makeText(EditService.this,"Complete",Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(EditService.this,"Service DOES NOT exist",Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "This service doesn't exist",Toast.LENGTH_LONG).show();
             }
+
+            dataBase.close();
             finish();
         }
-        else if(staff.isChecked())
-        {
+        else if(doctor.isChecked()){
 
-            boolean success=clinic.editService(Input1.getText().toString(),Input2.getText().toString()," by staff");
+            boolean success=dataBase.editService(Input1.getText().toString(), Input2.getText().toString(), " by doctor");
 
-            if(success)
-            {
+            if(success){
+                Toast.makeText(EditService.this, "Complete",Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(EditService.this, "This service doesn't exist",Toast.LENGTH_LONG).show();
+            }
+
+            dataBase.close();
+            finish();
+        }
+        else if(staff.isChecked()){
+
+            boolean success=dataBase.editService(Input1.getText().toString(), Input2.getText().toString(), " by staff");
+
+            if(success){
                 Toast.makeText(EditService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(EditService.this, "service DOES NOT exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
             }
+
+            dataBase.close();
             finish();
         }
-        else if(doctor.isChecked())
-        {
+        else{
 
-            boolean success=clinic.editService(Input1.getText().toString(),Input2.getText().toString()," by doctor");
+            Toast.makeText(EditService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
 
-            if(success)
-            {
-                Toast.makeText(EditService.this, "Complete", Toast.LENGTH_LONG).show();
-            }
-            else{
-                Toast.makeText(EditService.this, "Service DOES NOT exist", Toast.LENGTH_LONG).show();
-            }
-
-            finish();
-        }
-        else {
-            Toast.makeText(EditService.this, "DID NOT choose role for service.", Toast.LENGTH_LONG).show();
+            dataBase.close();
             finish();
         }
     }

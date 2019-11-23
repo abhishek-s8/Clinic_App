@@ -1,6 +1,6 @@
 package com.example.clinicapp;
 
-public class Clients
+public class Clients implements Account
 {
     private String userName;
     private String password;

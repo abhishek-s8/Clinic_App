@@ -13,8 +13,8 @@ public class ShowAccounts extends AppCompatActivity {
 
         myDBHelper dataBase=new myDBHelper(this);
 
-        String[] accountClient = dataBase.showC();
-        String[] accountsEmployee = dataBase.showE();
+        String[] accountClient = dataBase.showAllClients();
+        String[] accountsEmployee = dataBase.showAllEmployees();
 
         TextView textView = (TextView)findViewById(R.id.textView9);
 
@@ -39,14 +39,14 @@ public class ShowAccounts extends AppCompatActivity {
         }
         else if(accountsEmployee == null)
         {
-            String c = "Patients:\n";
+            String c="Patients:\n";
 
             for(int i = 0; i < accountClient.length; i++)
             {
-                c += accountClient[i];
-                if(i != accountClient.length-1)
+                c+=accountClient[i];
+                if(i!=accountClient.length-1)
                 {
-                    c += "\n";
+                    c+="\n";
                 }
             }
             textView.setText(c);

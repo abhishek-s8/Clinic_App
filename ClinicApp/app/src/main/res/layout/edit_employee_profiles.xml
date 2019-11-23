@@ -4,44 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupEmployee">
+    tools:context=".EditEmployeeProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#662196F3"
         android:gravity="center"
+        android:background="#662196F3"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Creating Employee Account"
-            android:textSize="28sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10sp" />
-
-        <EditText
-            android:id="@+id/UserName"
+            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="User Name"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:text="Edit your profile"
+            android:textColor="#303F9F"
+            android:textSize="30sp" />
 
-        <EditText
-            android:id="@+id/Password"
+        <TextView
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:text="Must refill every section!"
+            android:textColor="#303F9F"
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/Name"
+            android:id="@+id/nameEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -49,7 +40,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/addressText"
+            android:id="@+id/addressEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -57,7 +48,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/phoneNumText"
+            android:id="@+id/phoneNumEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,40 +56,36 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/paymentText"
+            android:id="@+id/nameOfClinicEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Payment Method"
+            android:hint="Name of the clinic"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/insuranceText"
+            android:id="@+id/insuranceEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Insurance Types"
+            android:hint="Insurance types"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/nameOfClinicText"
+            android:id="@+id/paymentEText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Clinic Name"
+            android:hint="Payment method"
             android:inputType="textPersonName" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15sp" />
 
         <Button
-            android:id="@+id/DoneBtn"
+            android:id="@+id/doneBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="doneEditOnClick"
             android:background="#C2185B"
-            android:onClick="doneClick"
-            android:text="Done"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:text="Done" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,67 +16,31 @@ public class DeleteService extends AppCompatActivity
     }
     public void finishOnClick(View view)
     {
+        myDBHelper dataBase = new myDBHelper(this);
 
         RadioButton doctor=(RadioButton)findViewById(R.id.doctorBtn);
         RadioButton staff=(RadioButton)findViewById(R.id.staffBtn);
         RadioButton nurse=(RadioButton)findViewById(R.id.nurseBtn);
 
-        Clinic clinic=new Clinic();
+        EditText userInput = (EditText) findViewById(R.id.deleteText);
 
-        EditText userInput=(EditText) findViewById(R.id.deleteText);
+        if(userInput.getText().toString().equals("")){
 
-        if(userInput.getText().toString().equals(""))
-        {
-            Toast.makeText(DeleteService.this,"No Service Inputted",Toast.LENGTH_LONG).show();
+            Toast.makeText(DeleteService.this,"No service was inputted.", Toast.LENGTH_LONG).show();
+
+            dataBase.close();
             finish();
         }
-        else if(nurse.isChecked())
-        {
-
-            boolean success=clinic.deleteService(userInput.getText().toString()," by nurse");
-
-            if(success)
-            {
-                Toast.makeText(DeleteService.this,"Complete",Toast.LENGTH_LONG).show();
-            }
-            else{
-                Toast.makeText(DeleteService.this,"Service DOES NOT exist",Toast.LENGTH_LONG).show();
-            }
-
-            finish();
-        }
-        else if(doctor.isChecked())
-        {
-
-            boolean success=clinic.deleteService(userInput.getText().toString()," by doctor");
-
-            if(success)
-            {
-                Toast.makeText(DeleteService.this,"Complete", Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(DeleteService.this,"Service DOES NOT exist",Toast.LENGTH_LONG).show();
-            }
-
-            finish();
-        }
-        else if(staff.isChecked())
-        {
-
-            boolean success=clinic.deleteService(userInput.getText().toString(), " by staff");
-
-            if(success)
-            {
+        else{
+            boolean success=dataBase.deleteService(userInput.getText().toString());
+            if(success){
                 Toast.makeText(DeleteService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(DeleteService.this, "Service DOES NOT exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteService.this, "Service does NOT exist", Toast.LENGTH_LONG).show();
             }
+            dataBase.close();
 
-            finish();
-        }
-        else {
-            Toast.makeText(DeleteService.this,"Role NOT CHOSEN for service.",Toast.LENGTH_LONG).show();
             finish();
         }
     }

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class RoleTest {
+public class TheRoleTest {
     @Test
     public void clientUserNameTest(){
         Clients clients = new Clients("Ralph", "123", "Ralph", 19);
@@ -20,7 +20,6 @@ public class RoleTest {
         Clients clients = new Clients("Ralph", "123", "Ralph", 19);
         assertEquals("Check the password of the client account", "123", clients.getPassword());
     }
-
     @Test
     public void clientAgeTest(){
         Clients clients = new Clients("Ralph", "123", "Ralph", 19);
@@ -46,13 +45,11 @@ public class RoleTest {
         Admin admin = new Admin();
         assertEquals("Check the user name of admin", "admin", admin.getUserName());
     }
-
     @Test
     public void adminNameTest() {
         Admin admin = new Admin();
         assertEquals("Check the name of admin", "admin", admin.getName());
     }
-
     @Test
     public void adminPasswordTest() {
         Admin admin = new Admin();

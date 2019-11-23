@@ -4,29 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientLogin">
+    tools:context=".AddWorkingHour">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#662196F3"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#662196F3">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="Start From:"
             android:textColor="#303F9F"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="Up tp 5 working hours can be added"
             android:textColor="#303F9F"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:firstDayOfWeek="2"
+            android:maxDate="12/31/2200"
+            android:minDate="01/01/2000" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="setWorkingHours"
+            android:background="#C2185B"
+            android:textColor="#FFFFFF"
+            android:text="Add" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
