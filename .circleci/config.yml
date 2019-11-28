@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ClinicApp
+    docker:
+      - image: circleci/android:api-29
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "ClinicApp/build.gradle" }}-{{ checksum  "ClinicApp/app/build.gradle" }}
+      - run:
+         name: Chmod permissions  
+         command: sudo chmod +x ./ClinicApp/gradlew
+      - run:
+          name: Download Dependencies
+          command: cd ClinicApp;./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "ClinicApp/build.gradle" }}-{{ checksum  "ClinicApp/app/build.gradle" }}
+      - run:
+          name: Run UnitTest
+          command: cd ClinicApp;./gradlew test
+      - store_artifacts:
+          path: ClinicApp/app/build/outputs/apk/debug/
+          destination: apks/
+      - store_test_results:
+          path: ClinicApp/app/build/test-results
