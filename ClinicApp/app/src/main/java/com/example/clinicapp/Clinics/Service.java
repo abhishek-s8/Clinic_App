@@ -1,4 +1,4 @@
-package com.example.clinicapp;
+package com.example.clinicapp.Clinics;
 
 public class Service {
     private String name;

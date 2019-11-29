@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeleteService">
+    tools:context=".deleteService">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#7B1FA2"
-                android:onClick="cancelOnClick"
+                android:onClick="cancelClick"
                 android:text="Go Back"
                 android:textColor="#FFFFFF" />
 
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#303F9F"
-                android:onClick="finishOnClick"
+                android:onClick="finishClick"
                 android:text="Delete"
                 android:textColor="#FFFFFF" />
 

@@ -1,17 +1,19 @@
 package com.example.clinicapp;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
-import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
-public class AddService extends AppCompatActivity {
+import com.example.clinicapp.DataBase.DataBase;
 
+public class addService extends AppCompatActivity {
+    private RadioButton nurse;
     private RadioButton doctor;
     private RadioButton staff;
-    private RadioButton nurse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,76 +21,58 @@ public class AddService extends AppCompatActivity {
         setContentView(R.layout.add_service);
     }
 
-    public void finishClick(View view)
-    {
-        myDBHelper dataBase = new myDBHelper(this);
+    public void cancelClick(View view){
+        finish();
+    }
 
+    public void finishClick(View view){
+        DataBase dataBase = new DataBase(this);
+        nurse = (RadioButton)findViewById(R.id.nurseBtn);
         doctor = (RadioButton)findViewById(R.id.doctorBtn);
         staff = (RadioButton)findViewById(R.id.staffBtn);
-        nurse = (RadioButton)findViewById(R.id.nurseBtn);
-
         EditText userInput = (EditText)findViewById(R.id.addText);
-
         if(userInput.getText().toString().equals("")){
-            Toast.makeText(AddService.this,"No service was inputted!", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(addService.this, "You haven't input any service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }
         else if(nurse.isChecked()){
-
             boolean success = dataBase.addService(userInput.getText().toString(), " by nurse");
-
             if(success){
-                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(AddService.this,"This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
-
             dataBase.close();
             finish();
         }
         else if(doctor.isChecked()){
-
-            boolean success=dataBase.addService(userInput.getText().toString(), " by doctor");
-
+            boolean success = dataBase.addService(userInput.getText().toString(), " by doctor");
             if(success){
-                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(AddService.this, "This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
-
             dataBase.close();
             finish();
         }
         else if(staff.isChecked()){
-
-            boolean success=dataBase.addService(userInput.getText().toString(), " by staff");
-
+            boolean success = dataBase.addService(userInput.getText().toString(), " by staff");
             if(success){
-                Toast.makeText(AddService.this,"Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(AddService.this,"This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
-
             dataBase.close();
             finish();
         }
         else{
-
-            Toast.makeText(AddService.this, "No role was chosen for this service.", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(addService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }
-
-    }
-
-    public void cancelClick(View view)
-    {
-        finish();
     }
 }

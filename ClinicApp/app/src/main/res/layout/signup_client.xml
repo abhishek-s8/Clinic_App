@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#C2185B"
-            android:onClick="doneClick"
+            android:onClick="doneOnClick"
             android:text="Done"
             android:textColor="#FFFFFF" />
     </LinearLayout>

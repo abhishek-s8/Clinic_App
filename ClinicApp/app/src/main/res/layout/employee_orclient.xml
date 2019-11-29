@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginOptions">
+    tools:context=".EmployeeORClient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign up as client or employee!"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="#303F9F"
             android:textSize="20sp" />
 
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#7B1FA2"
-                android:onClick="employeeClick"
+                android:onClick="employeeOnClick"
                 android:text="Employee"
                 android:textColor="#FFFFFF" />
 
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#303F9F"
-                android:onClick="clientClick"
+                android:onClick="clientOnClick"
                 android:text="Client"
                 android:textColor="#FAFFFFFF" />
         </LinearLayout>

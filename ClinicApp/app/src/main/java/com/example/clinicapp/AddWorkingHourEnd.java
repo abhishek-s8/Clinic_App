@@ -1,112 +1,92 @@
 package com.example.clinicapp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
 
-public class AddWorkingHourEnd extends AppCompatActivity{
+import com.example.clinicapp.DataBase.DataBase;
 
-    private String userName;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class addWorkingHourEnd extends AppCompatActivity {
     private CalendarView calendarView;
-
     private int yearStart;
-    private int dayStart;
+    private int year1 = 0;
     private int monthStart;
-
-    private int theYear=0;
-    private int theMonth=0;
-    private int theDay=0;
-
+    private int month1 = 0;
+    private int dayOfMonthStart;
+    private int dayOfMonth1 = 0;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.add_working_hour_end);
-        Intent intent=getIntent();
+        Intent intent = getIntent();
+        yearStart = intent.getIntExtra("year", 0);
+        monthStart = intent.getIntExtra("month", 0);
+        dayOfMonthStart = intent.getIntExtra("dayOfMonth", 0);
+        userName = intent.getStringExtra("userName");
 
-        monthStart=intent.getIntExtra("month",0);
-        dayStart=intent.getIntExtra("day",0);
-        yearStart=intent.getIntExtra("year",0);
-
-        userName=intent.getStringExtra("userName");
-        calendarView=(CalendarView)findViewById(R.id.calendarView2);
-
-        if(yearStart==0)
-        {
-            calendarView.setDate(new Date().getTime());
+        calendarView = (CalendarView)findViewById(R.id.calendarView2);
+        if(yearStart == 0){
             calendarView.setMinDate(new Date().getTime());
+            calendarView.setDate(new Date().getTime());
         }
         else {
-
-            long currentTime=intToLongTime(yearStart,monthStart,dayStart);
-
-            calendarView.setDate(currentTime);
+            long currentTime = intToLongTime(yearStart, monthStart, dayOfMonthStart);
             calendarView.setMinDate(currentTime);
+            calendarView.setDate(currentTime);
         }
-
         calendarView.setDate(new Date().getTime());
-
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(CalendarView view,int year,int month,int day) {
-
-                month+=1;
-
-                Toast.makeText(AddWorkingHourEnd.this, "Working hours end by "+month+"/"+day+"/"+year,Toast.LENGTH_LONG).show();
-
-                theMonth = month;
-                theDay = day;
-                theYear = year;
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                month += 1;
+                Toast.makeText(addWorkingHourEnd.this, "Your working hour end by " + month + "/" + dayOfMonth + "/" + year, Toast.LENGTH_LONG).show();
+                year1 = year;
+                month1 = month;
+                dayOfMonth1 = dayOfMonth;
             }
         });
     }
 
     public void SetEndDate(View view){
-        if(yearStart==0||theYear==0){
-            Toast.makeText(AddWorkingHourEnd.this,"Date was NOT chosen. Try again!",Toast.LENGTH_LONG).show();
+        if(yearStart == 0 || year1 == 0){
+            Toast.makeText(addWorkingHourEnd.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
             finish();
         }
         else {
-
-            String workingTime=monthStart+"/"+dayStart+"/"+yearStart+" to "+theMonth+"/"+theDay+"/"+theYear;
-
-            myDBHelper dataBase = new myDBHelper(this);
-            boolean success = dataBase.addWorkingHour(workingTime,userName);
-
-            if(success)
-            {
-                Toast.makeText(AddWorkingHourEnd.this, "Complete", Toast.LENGTH_LONG).show();
-
+            String workingTime = monthStart + "/" + dayOfMonthStart + "/" + yearStart + " to " + month1 + "/" + dayOfMonth1 + "/" + year1;
+            DataBase dataBase = new DataBase(this);
+            boolean success = dataBase.addWorkingHour(workingTime, userName);
+            if(success){
+                Toast.makeText(addWorkingHourEnd.this, "Success!!!", Toast.LENGTH_LONG).show();
                 finish();
             }
             else{
-                Toast.makeText(AddWorkingHourEnd.this, "Working hour has been added", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(addWorkingHourEnd.this, "This working hour had been added", Toast.LENGTH_LONG).show();
                 finish();
             }
         }
     }
 
-    private long intToLongTime(int year,int month,int day){
-
-        SimpleDateFormat formatter=new SimpleDateFormat("MM-dd-yyyy");
-        String currentTime=month+"-"+day+"-"+year;
-
-        Date date=null;
-
+    private long intToLongTime(int year, int month, int dayOfMonth){
+        String currentTime = month + "-" + dayOfMonth + "-" + year;
+        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+        Date date = null;
         try {
-            date=formatter.parse(currentTime);
+            date = formatter.parse(currentTime);
         } catch (ParseException e) {
-            date=null;
+            date = null;
         }
-        if(date==null){
+        if(date == null){
             return new Date().getTime();
         }
         else{

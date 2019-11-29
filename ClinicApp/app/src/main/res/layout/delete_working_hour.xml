@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeleteWorkingHour">
+    tools:context=".deleteWorkingHour">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,27 +13,28 @@
         android:background="#662196F3"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#C2185B"
+            android:onClick="deleteWH"
+            android:text="Finish"
+            android:textColor="#FFFFFF" />
+
         <CalendarView
             android:id="@+id/calendarView3"
             android:layout_width="match_parent"
-            android:layout_height="310dp"
+            android:layout_height="300dp"
             android:maxDate="12/31/2200"
             android:minDate="01/01/2000" />
 
         <CalendarView
             android:id="@+id/calendarView4"
             android:layout_width="match_parent"
-            android:layout_height="310dp"
+            android:layout_height="300dp"
             android:maxDate="12/31/2200"
             android:minDate="01/01/2000" />
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="deleteWH"
-            android:background="#C2185B"
-            android:textColor="#FFFFFF"
-            android:text="Finish" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

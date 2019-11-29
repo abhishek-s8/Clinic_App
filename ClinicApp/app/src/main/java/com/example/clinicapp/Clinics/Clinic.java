@@ -1,4 +1,4 @@
-package com.example.clinicapp;
+package com.example.clinicapp.Clinics;
 
 import java.util.ArrayList;
 
@@ -7,23 +7,42 @@ public class Clinic {
     private String name;
     private String address;
 
-    public Clinic(String name,String address){
+    public Clinic(String name, String address){
         this.name = name;
         this.address =  address;
         services = new ArrayList<>();
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    public String getAddress() {
-        return address;
-    }
     public void setName(String name) {
         this.name = name;
     }
+
     public String getName() {
         return name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setServices(ArrayList<Service> services) {
+        this.services = services;
+    }
+
+    public ArrayList<Service> getServices() {
+        return services;
+    }
+
+    public boolean addService(Service service){
+        return services.add(service);
+    }
+
+    public boolean removeService(Service service){
+        return services.remove(service);
     }
 
     public boolean editService(Service before, Service after){
@@ -41,18 +60,5 @@ public class Clinic {
         else{
             return false;
         }
-    }
-
-    public void setServices(ArrayList<Service> services) {
-        this.services = services;
-    }
-    public ArrayList<Service> getServices() {
-        return services;
-    }
-    public boolean addService(Service service){
-        return services.add(service);
-    }
-    public boolean removeService(Service service){
-        return services.remove(service);
     }
 }

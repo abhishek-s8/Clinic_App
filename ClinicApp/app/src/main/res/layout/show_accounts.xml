@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#C2185B"
-            android:onClick="finishClick"
+            android:onClick="fiOnClick"
             android:text="Finish"
             android:textColor="#FAFFFFFF" />
     </LinearLayout>
