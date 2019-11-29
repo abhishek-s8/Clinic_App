@@ -1,122 +1,100 @@
 package com.example.clinicapp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import java.util.Date;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
-public class DeleteWorkingHour extends AppCompatActivity{
+import com.example.clinicapp.DataBase.DataBase;
 
-    private String userName;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class deleteWorkingHour extends AppCompatActivity {
     private CalendarView start;
     private CalendarView end;
-
-    private int yearStart=0;
-    private int monthStart=0;
-    private int dayStart=0;
-
-    private int yearEnd=0;
-    private int monthEnd=0;
-    private int dayEnd=0;
+    private int yearStart = 0;
+    private int monthStart = 0;
+    private int dayOfMonthStart = 0;
+    private int yearEnd = 0;
+    private int monthEnd = 0;
+    private int dayOfMonthEnd = 0;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_working_hour);
-
         Intent intent = getIntent();
-
         userName = intent.getStringExtra("userName");
         start = (CalendarView)findViewById(R.id.calendarView3);
         end = (CalendarView)findViewById(R.id.calendarView4);
-
         start.setMinDate(new Date().getTime());
         end.setMinDate(new Date().getTime());
-
         start.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(CalendarView view,int year,int month,int day) {
-
-                month+=1;
-
-                monthStart=month;
-                dayStart=day;
-                yearStart=year;
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                month += 1;
+                yearStart = year;
+                monthStart = month;
+                dayOfMonthStart = dayOfMonth;
             }
         });
 
         end.setDate(new Date().getTime());
-
-        if(yearStart==0){
+        if(yearStart == 0){
             end.setMinDate(new Date().getTime());
         }
         else {
-
-            long currentTime=intToLongTime(yearStart,monthStart,dayStart);
+            long currentTime = intToLongTime(yearStart, monthStart, dayOfMonthStart);
             end.setMinDate(currentTime);
         }
-
         end.setDate(new Date().getTime());
-
         end.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(CalendarView view,int year,int month,int day) {
-
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
-
-                dayEnd = day;
                 yearEnd = year;
                 monthEnd = month;
+                dayOfMonthEnd = dayOfMonth;
             }
         });
     }
 
     public void deleteWH(View view){
-
-        if(yearStart==0||yearEnd==0){
-            Toast.makeText(DeleteWorkingHour.this,"No date was chosen. Try again.",Toast.LENGTH_LONG).show();
+        if(yearStart == 0 || yearEnd == 0){
+            Toast.makeText(deleteWorkingHour.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
             finish();
         }
         else {
-
-            String workingTime=monthStart+"/"+dayStart+"/"+yearStart+" to "+monthEnd+"/"+dayEnd+"/"+yearEnd;
-            myDBHelper dataBase = new myDBHelper(this);
-
+            String workingTime = monthStart + "/" + dayOfMonthStart + "/" + yearStart + " to " + monthEnd + "/" + dayOfMonthEnd + "/" + yearEnd;
+            DataBase dataBase = new DataBase(this);
             boolean success = dataBase.deleteWorkingHour(workingTime, userName);
-
             if(success){
-
-                Toast.makeText(DeleteWorkingHour.this, "Complete", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(deleteWorkingHour.this, "Success!!!", Toast.LENGTH_LONG).show();
                 finish();
             }
             else{
-
-                Toast.makeText(DeleteWorkingHour.this, "Working Hour does NOT exist",Toast.LENGTH_LONG).show();
-
+                Toast.makeText(deleteWorkingHour.this, "This working hour doesn't exist", Toast.LENGTH_LONG).show();
                 finish();
             }
         }
     }
 
-    private long intToLongTime(int year,int month,int day){
-
-        SimpleDateFormat formatter=new SimpleDateFormat("MM-dd-yyyy");
-        String currentTime=month+"-"+day+"-"+year;
-
-        Date date=null;
-
+    private long intToLongTime(int year, int month, int dayOfMonth){
+        String currentTime = month + "-" + dayOfMonth + "-" + year;
+        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+        Date date = null;
         try {
-            date=formatter.parse(currentTime);
+            date = formatter.parse(currentTime);
         } catch (ParseException e) {
-            date=null;
+            date = null;
         }
-        if(date==null){
+        if(date == null){
             return new Date().getTime();
         }
         else{

@@ -1,20 +1,21 @@
 package com.example.clinicapp;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.content.Intent;
 import android.widget.EditText;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class AccountManager extends AppCompatActivity {
+import com.example.clinicapp.DataBase.DataBase;
 
+public class AccountManager extends AppCompatActivity {
+    private RadioButton delete;
+    private RadioButton create;
     private RadioButton employee;
     private RadioButton client;
-
-    private RadioButton create;
-    private RadioButton delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,46 +23,37 @@ public class AccountManager extends AppCompatActivity {
         setContentView(R.layout.account_manager);
     }
 
-    public void finishClick(View view){
-        employee = (RadioButton)findViewById(R.id.employeeBtn);
-        client = (RadioButton)findViewById(R.id.clientBtn);
+    public void cancelClick(View view){
+        finish();
+    }
 
+    public void finishClick(View view){
         delete = (RadioButton)findViewById(R.id.deleteBtn);
         create = (RadioButton)findViewById(R.id.createBtn);
-
-        myDBHelper dataBase = new myDBHelper(this);
-
-        if(delete.isChecked())
-        {
+        employee = (RadioButton)findViewById(R.id.employeeBtn);
+        client = (RadioButton)findViewById(R.id.clientBtn);
+        DataBase dataBase = new DataBase(this);
+        if(delete.isChecked()){
             EditText userName = (EditText)findViewById(R.id.UserName);
-
-            if(userName.getText().toString().equals(""))
-            {
-                Toast.makeText(AccountManager.this, "User name was NOT entered", Toast.LENGTH_LONG).show();
+            if(userName.getText().toString().equals("")){
+                Toast.makeText(AccountManager.this, "You haven't enter user name", Toast.LENGTH_LONG).show();
                 finish();
             }
-            else if(client.isChecked())
-            {
-                dataBase.remove("Client", userName.getText().toString());
-                Toast.makeText(AccountManager.this, "Complete", Toast.LENGTH_LONG).show();
-                finish();
-            }
-            else if(employee.isChecked())
-            {
+            else if(employee.isChecked()){
                 dataBase.remove("Employee", userName.getText().toString());
-                Toast.makeText(AccountManager.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(AccountManager.this, "Success!!!", Toast.LENGTH_LONG).show();
+                finish();
+            }
+            else if(client.isChecked()){
+                dataBase.remove("Client", userName.getText().toString());
+                Toast.makeText(AccountManager.this, "Success!!!", Toast.LENGTH_LONG).show();
                 finish();
             }
         }
         else if(create.isChecked()){
-            Intent intent = new Intent(this, LoginOptions.class);
+            Intent intent = new Intent(this, EmployeeORClient.class);
             startActivity(intent);
             finish();
         }
-    }
-
-    public void cancelClick(View view)
-    {
-        finish();
     }
 }

@@ -1,97 +1,78 @@
 package com.example.clinicapp;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.List;
 import android.view.View;
 import android.widget.TextView;
-import android.content.Intent;
+
+import com.example.clinicapp.DataBase.DataBase;
 
 public class AdminLogin extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_login);
-
-        Intent var=getIntent();
-        String name=var.getStringExtra("Name");
-
-        TextView textView = (TextView)findViewById(R.id.textView10);
-        TextView welcome = (TextView)findViewById(R.id.textView11);
-        welcome.setText("Welcome "+name+"!");
-        textView.setText("You are logged in as Admin.");
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("Name");
+        TextView textView = (TextView)findViewById(R.id.textView5);
+        TextView welcome = (TextView)findViewById(R.id.textView19);
+        welcome.setText("Welcome " + name + "!");
+        textView.setText("You are logged in as Admin");
     }
 
-    public void editClick(View view)
-    {
-        Intent var=new Intent(this, EditService.class);
-        startActivity(var);
+    public void addOnClick(View view){
+        Intent intent = new Intent(this, addService.class);
+        startActivity(intent);
     }
 
-    public void showClick(View view)
-    {
-        Intent var=new Intent(this, ShowAccounts.class);
-        startActivity(var);
+    public void editOnClick(View view){
+        Intent intent = new Intent(this, editService.class);
+        startActivity(intent);
     }
 
-    public void accountClick(View view)
-    {
-        Intent var=new Intent(this, AccountManager.class);
-        startActivity(var);
+    public void deleteOnClick(View view){
+        Intent intent = new Intent(this, deleteService.class);
+        startActivity(intent);
     }
 
-    public void addClick(View view)
-    {
-        Intent var=new Intent(this, AddService.class);
-        startActivity(var);
-    }
-
-    public void deleteClick(View view)
-    {
-        Intent var=new Intent(this, DeleteService.class);
-        startActivity(var);
-    }
-
-    public void servicesClick(View view)
-    {
-        AlertDialog.Builder theBuilder=new AlertDialog.Builder(this);
-        theBuilder.setTitle("Services provided:");
-        String service="";
-
-        myDBHelper dataBase=new myDBHelper(this);
-        String[] services=dataBase.showServices();
-
-        for(int i=0; i<services.length;i++)
-        {
-            service+=i+1;
-            service+=". ";
-
-            if(i!=services.length)
-            {
-                service+=services[i];
-                service+="\n";
+    public void servicesOnClick(View view){
+        DataBase dataBase = new DataBase(this);
+        String[] services = dataBase.showServices();
+        String service = "";
+        for(int i = 0; i < services.length; i++){
+            service += i+1;
+            service += ". ";
+            if(i != services.length){
+                service += services[i];
+                service += "\n";
             }
             else{
-                service+=services[i];
+                service += services[i];
             }
         }
-
-        theBuilder.setMessage(service);
-
-        theBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-        {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("All the services provided by our clinic");
+        builder.setMessage(service);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface arg0, int arg1) {
-            }
+            public void onClick(DialogInterface arg0, int arg1){}
         });
-
-        AlertDialog build=theBuilder.create();
-
-        build.show();
+        AlertDialog b = builder.create();
+        b.show();
     }
 
+    public void accountOnClick(View view){
+        Intent intent = new Intent(this, AccountManager.class);
+        startActivity(intent);
+    }
+
+    public void showOnClick(View view){
+        Intent intent = new Intent(this, ShowAccounts.class);
+        startActivity(intent);
+    }
 }
