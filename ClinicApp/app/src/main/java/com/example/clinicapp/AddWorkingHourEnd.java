@@ -15,7 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class addWorkingHourEnd extends AppCompatActivity {
+public class AddWorkingHourEnd extends AppCompatActivity {
     private CalendarView calendarView;
     private int yearStart;
     private int year1 = 0;
@@ -53,7 +53,7 @@ public class addWorkingHourEnd extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
-                Toast.makeText(addWorkingHourEnd.this, "Your working hour end by " + month + "/" + dayOfMonth + "/" + year, Toast.LENGTH_LONG).show();
+                Toast.makeText(AddWorkingHourEnd.this, "Your working hour end by " + month + "/" + dayOfMonth + "/" + year, Toast.LENGTH_LONG).show();
                 year1 = year;
                 month1 = month;
                 dayOfMonth1 = dayOfMonth;
@@ -63,7 +63,7 @@ public class addWorkingHourEnd extends AppCompatActivity {
 
     public void SetEndDate(View view){
         if(yearStart == 0 || year1 == 0){
-            Toast.makeText(addWorkingHourEnd.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddWorkingHourEnd.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
             finish();
         }
         else {
@@ -78,12 +78,12 @@ public class addWorkingHourEnd extends AppCompatActivity {
             boolean success = dataBase.addWorkingHour(workingTimeStart, workingTimeEnd, userName);
 
             if(success){
-                Toast.makeText(addWorkingHourEnd.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddWorkingHourEnd.this, "Success!!!", Toast.LENGTH_LONG).show();
                 dataBase.addWorkingHour2Clinic(userName, employee.getNameOfClinic());
                 finish();
             }
             else{
-                Toast.makeText(addWorkingHourEnd.this, "This working hour had been added", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddWorkingHourEnd.this, "This working hour had been added", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

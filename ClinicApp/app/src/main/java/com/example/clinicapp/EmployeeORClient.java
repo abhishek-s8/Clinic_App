@@ -15,13 +15,13 @@ public class EmployeeORClient extends AppCompatActivity {
     }
 
     public void clientOnClick(View view){
-        Intent intent = new Intent(this, SignUpClient.class);
+        Intent intent = new Intent(this, SignupClient.class);
         startActivity(intent);
         finish();
     }
 
     public void employeeOnClick(View view){
-        Intent intent = new Intent(this, SignUpEmployee.class);
+        Intent intent = new Intent(this, SignupEmployee.class);
         startActivity(intent);
         finish();
     }

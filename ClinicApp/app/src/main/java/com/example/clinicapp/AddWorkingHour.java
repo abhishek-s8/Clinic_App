@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import java.util.Date;
 
-public class addWorkingHour extends AppCompatActivity {
+public class AddWorkingHour extends AppCompatActivity {
     private CalendarView calendarView;
     private int year1 = 0;
     private int month1 = 0;
@@ -27,7 +27,7 @@ public class addWorkingHour extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
-                Toast.makeText(addWorkingHour.this, "Your working hour start from " + month + "/" + dayOfMonth + "/" + year, Toast.LENGTH_LONG).show();
+                Toast.makeText(AddWorkingHour.this, "Your working hour start from " + month + "/" + dayOfMonth + "/" + year, Toast.LENGTH_LONG).show();
                 year1 = year;
                 month1 = month;
                 dayOfMonth1 = dayOfMonth;
@@ -38,7 +38,7 @@ public class addWorkingHour extends AppCompatActivity {
     }
 
     public void setWorkingHours(View view){
-        Intent intent = new Intent(this, addWorkingHourEnd.class);
+        Intent intent = new Intent(this, AddWorkingHourEnd.class);
         intent.putExtra("year", year1);
         intent.putExtra("month", month1);
         intent.putExtra("dayOfMonth", dayOfMonth1);

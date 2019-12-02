@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.clinicapp.DataBase.DataBase;
 
-public class editService extends AppCompatActivity {
+public class EditService extends AppCompatActivity {
     private RadioButton nurse;
     private RadioButton doctor;
     private RadioButton staff;
@@ -33,17 +33,17 @@ public class editService extends AppCompatActivity {
         doctor = (RadioButton)findViewById(R.id.doctorBtn);
         staff = (RadioButton)findViewById(R.id.staffBtn);
         if(userInput1.getText().toString().equals("") || userInput2.getText().toString().equals("")){
-            Toast.makeText(editService.this, "You haven't input service", Toast.LENGTH_LONG).show();
+            Toast.makeText(EditService.this, "You haven't input service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }
         else if(nurse.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by nurse");
             if(success){
-                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
@@ -51,10 +51,10 @@ public class editService extends AppCompatActivity {
         else if(doctor.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by doctor");
             if(success){
-                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
@@ -62,16 +62,16 @@ public class editService extends AppCompatActivity {
         else if(staff.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by staff");
             if(success){
-                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
         }
         else{
-            Toast.makeText(editService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
+            Toast.makeText(EditService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }

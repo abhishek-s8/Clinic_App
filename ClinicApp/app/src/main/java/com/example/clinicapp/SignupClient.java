@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.clinicapp.Clinics.Clients;
 import com.example.clinicapp.DataBase.DataBase;
 
-public class SignUpClient extends AppCompatActivity {
+public class SignupClient extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,7 +177,7 @@ public class SignUpClient extends AppCompatActivity {
                 int i = Integer.parseInt(ageS);
                 client.setAge(i);
                 dataBase.insertClient(client);
-                Toast.makeText(SignUpClient.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignupClient.this, "Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

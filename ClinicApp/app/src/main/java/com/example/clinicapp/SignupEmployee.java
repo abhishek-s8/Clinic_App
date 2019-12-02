@@ -14,7 +14,7 @@ import com.example.clinicapp.Clinics.Clinic;
 import com.example.clinicapp.Clinics.Employee;
 import com.example.clinicapp.DataBase.DataBase;
 
-public class SignUpEmployee extends AppCompatActivity {
+public class SignupEmployee extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,32 +35,32 @@ public class SignUpEmployee extends AppCompatActivity {
             public void onClick(DialogInterface dialog,int id) {
                 boolean pass = true;
                 if(nameOfClinic.getText().toString().equals("") || address.getText().toString().equals("")){
-                    Toast.makeText(SignUpEmployee.this, "Fail, you haven't inout anything", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupEmployee.this, "Fail, you haven't inout anything", Toast.LENGTH_LONG).show();
                     pass = false;
                 }
                 else{
                     for(int i = 0; i < nameOfClinic.getText().toString().length(); i++){
                         if(!Character.isDigit(nameOfClinic.getText().toString().charAt(i)) && !Character.isLetter(nameOfClinic.getText().toString().charAt(i)) && !Character.isSpace(nameOfClinic.getText().toString().charAt(i))){
-                            Toast.makeText(SignUpEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignupEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
                             pass = false;
                         }
                     }
                     for(int i = 0; i < address.getText().toString().length(); i++){
                         if(!Character.isDigit(address.getText().toString().charAt(i)) && !Character.isLetter(address.getText().toString().charAt(i)) && !Character.isSpace(address.getText().toString().charAt(i))){
-                            Toast.makeText(SignUpEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignupEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
                             pass = false;
                         }
                     }
                 }
                 if(pass) {
                     if (dataBase.clinicExist(nameOfClinic.getText().toString())) {
-                        Toast.makeText(SignUpEmployee.this, "This clinic has exist", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignupEmployee.this, "This clinic has exist", Toast.LENGTH_LONG).show();
                     } else {
                         Clinic clinic = new Clinic();
                         clinic.setName(nameOfClinic.getText().toString());
                         clinic.setAddress(address.getText().toString());
                         dataBase.insertClinic(clinic);
-                        Toast.makeText(SignUpEmployee.this, "Complete", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignupEmployee.this, "Complete", Toast.LENGTH_LONG).show();
                     }
                 }
                 dataBase.close();
@@ -359,7 +359,7 @@ public class SignUpEmployee extends AppCompatActivity {
                 employee.setNameOfClinic(nameOfClinicS);
                 employee.setPaymentMethod(paymentS);
                 dataBase.insertEmployee(employee);
-                Toast.makeText(SignUpEmployee.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignupEmployee.this, "Success!!!", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

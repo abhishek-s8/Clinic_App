@@ -88,13 +88,13 @@ public class EmployeeLogin extends AppCompatActivity {
     }
 
     public void addWorkingHour(View view){
-        Intent intent = new Intent(this, addWorkingHour.class);
+        Intent intent = new Intent(this, AddWorkingHour.class);
         intent.putExtra("userName", userName);
         startActivity(intent);
     }
 
     public void deleteWorkingHour(View view){
-        Intent intent = new Intent(this, deleteWorkingHour.class);
+        Intent intent = new Intent(this, DeleteWorkingHour.class);
         intent.putExtra("userName", userName);
         startActivity(intent);
     }

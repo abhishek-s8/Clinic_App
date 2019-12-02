@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.clinicapp.DataBase.DataBase;
 
-public class addService extends AppCompatActivity {
+public class AddService extends AppCompatActivity {
     private RadioButton nurse;
     private RadioButton doctor;
     private RadioButton staff;
@@ -32,17 +32,17 @@ public class addService extends AppCompatActivity {
         staff = (RadioButton)findViewById(R.id.staffBtn);
         EditText userInput = (EditText)findViewById(R.id.addText);
         if(userInput.getText().toString().equals("")){
-            Toast.makeText(addService.this, "You haven't input any service", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddService.this, "You haven't input any service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }
         else if(nurse.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by nurse");
             if(success){
-                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
@@ -50,10 +50,10 @@ public class addService extends AppCompatActivity {
         else if(doctor.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by doctor");
             if(success){
-                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
@@ -61,16 +61,16 @@ public class addService extends AppCompatActivity {
         else if(staff.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by staff");
             if(success){
-                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddService.this, "This service has exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
         }
         else{
-            Toast.makeText(addService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddService.this, "You didn't choose any role for this service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }

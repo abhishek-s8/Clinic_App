@@ -29,17 +29,17 @@ public class AdminLogin extends AppCompatActivity {
     }
 
     public void addOnClick(View view){
-        Intent intent = new Intent(this, addService.class);
+        Intent intent = new Intent(this, AddService.class);
         startActivity(intent);
     }
 
     public void editOnClick(View view){
-        Intent intent = new Intent(this, editService.class);
+        Intent intent = new Intent(this, EditService.class);
         startActivity(intent);
     }
 
     public void deleteOnClick(View view){
-        Intent intent = new Intent(this, deleteService.class);
+        Intent intent = new Intent(this, DeleteService.class);
         startActivity(intent);
     }
 

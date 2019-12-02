@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class deleteWorkingHour extends AppCompatActivity {
+public class DeleteWorkingHour extends AppCompatActivity {
     private CalendarView start;
     private CalendarView end;
     private int yearStart = 0;
@@ -72,7 +72,7 @@ public class deleteWorkingHour extends AppCompatActivity {
 
     public void deleteWH(View view){
         if(yearStart == 0 || yearEnd == 0){
-            Toast.makeText(deleteWorkingHour.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
+            Toast.makeText(DeleteWorkingHour.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
             finish();
         }
         else {
@@ -86,7 +86,7 @@ public class deleteWorkingHour extends AppCompatActivity {
             DataBase dataBase = new DataBase(this);
             boolean success = dataBase.deleteWorkingHour(workingTimeStart, workingTimeEnd, userName);
             if(success){
-                Toast.makeText(deleteWorkingHour.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteWorkingHour.this, "Success!!!", Toast.LENGTH_LONG).show();
                 ArrayList<String> d = new ArrayList<>();
                 d.add(workingTimeStart);
                 d.add(workingTimeEnd);
@@ -94,7 +94,7 @@ public class deleteWorkingHour extends AppCompatActivity {
                 finish();
             }
             else{
-                Toast.makeText(deleteWorkingHour.this, "This working hour doesn't exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteWorkingHour.this, "This working hour doesn't exist", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.clinicapp.DataBase.DataBase;
 
-public class deleteService extends AppCompatActivity {
+public class DeleteService extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +25,17 @@ public class deleteService extends AppCompatActivity {
         DataBase dataBase = new DataBase(this);
         EditText userInput = (EditText) findViewById(R.id.deleteText);
         if(userInput.getText().toString().equals("")){
-            Toast.makeText(deleteService.this, "You haven't input any service", Toast.LENGTH_LONG).show();
+            Toast.makeText(DeleteService.this, "You haven't input any service", Toast.LENGTH_LONG).show();
             dataBase.close();
             finish();
         }
         else{
             boolean success = dataBase.deleteService(userInput.getText().toString());
             if(success){
-                Toast.makeText(deleteService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteService.this, "Success!!!", Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(deleteService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
             }
             dataBase.close();
             finish();
