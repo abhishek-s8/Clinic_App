@@ -3,4 +3,5 @@ A Walk-In Clinics Service App - The application addresses the need for people to
 
 Group Members: Abdullah Morrison - 300057314, Abhishek Saravanabavan - 300062167
 
+Build Status[![BuildStatus](https://circleci.com/gh/purplerain8/SEG2105_ClinicApp.png?branch=master)](https://circleci.com/gh/purplerain8/SEG2105_ClinicApp)
 
