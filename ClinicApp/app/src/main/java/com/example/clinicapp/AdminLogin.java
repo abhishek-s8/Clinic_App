@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.clinicapp.Clinics.Clinic;
 import com.example.clinicapp.DataBase.DataBase;
+
+import java.util.ArrayList;
 
 public class AdminLogin extends AppCompatActivity {
 
@@ -56,7 +59,7 @@ public class AdminLogin extends AppCompatActivity {
             }
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("All the services provided by our clinic");
+        builder.setTitle("All the services provided clinics");
         builder.setMessage(service);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
@@ -73,6 +76,38 @@ public class AdminLogin extends AppCompatActivity {
 
     public void showOnClick(View view){
         Intent intent = new Intent(this, ShowAccounts.class);
+        startActivity(intent);
+    }
+
+    public void SAC(View view){
+        DataBase dataBase = new DataBase(this);
+        ArrayList<Clinic> c = dataBase.showAllClinics();
+        String clinics = "";
+        for(int i = 0; i < c.size(); i++){
+            clinics += i+1;
+            clinics += ". ";
+            if(i != c.size()){
+                clinics += c.get(i).getName();
+                clinics += "\n";
+            }
+            else{
+                clinics += c.get(i).getName();
+            }
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("All the clinics");
+        builder.setMessage(clinics);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface arg0, int arg1){}
+        });
+        AlertDialog b = builder.create();
+        b.show();
+    }
+
+    public void ServiceByClinic(View view){
+        Intent intent = new Intent(this, ServiceByClinic.class);
         startActivity(intent);
     }
 }

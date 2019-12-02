@@ -4,39 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowAccounts">
+    tools:context=".SearchByName">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="#662196F3"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/AccountListEmployee"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-        </ListView>
-
-        <ListView
-            android:id="@+id/AccountListClient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:gravity="center"
+        android:background="#662196F3"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView31"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp" />
+            android:gravity="center"
+            android:text="Search Clinic by Name"
+            android:textColor="#303F9F"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/editText11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name of Clinic"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/finishBtn"
+            android:id="@+id/button26"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="searchByN"
             android:textColor="#FFFFFF"
             android:background="#C2185B"
-            android:onClick="fiOnClick"
-            android:text="Finish" />
+            android:text="Done" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

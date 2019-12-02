@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupEmployee">
+    tools:context=".SignUpEmployee">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,9 +16,31 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
+            android:textColor="#303F9F"
             android:layout_height="wrap_content"
             android:text="Creating Employee Account"
             android:textSize="28sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:textColor="#303F9F"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:text="Click below if your clinic is not registered" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="newClinic"
+            android:textColor="#FFFFFF"
+            android:background="#C2185B"
+            android:text="Create a clinic" />
 
         <Space
             android:layout_width="match_parent"

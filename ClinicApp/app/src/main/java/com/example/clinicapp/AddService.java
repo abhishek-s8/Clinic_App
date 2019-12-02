@@ -39,7 +39,7 @@ public class addService extends AppCompatActivity {
         else if(nurse.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by nurse");
             if(success){
-                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
@@ -50,7 +50,7 @@ public class addService extends AppCompatActivity {
         else if(doctor.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by doctor");
             if(success){
-                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();
@@ -61,7 +61,7 @@ public class addService extends AppCompatActivity {
         else if(staff.isChecked()){
             boolean success = dataBase.addService(userInput.getText().toString(), " by staff");
             if(success){
-                Toast.makeText(addService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(addService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(addService.this, "This service has exist", Toast.LENGTH_LONG).show();

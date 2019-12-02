@@ -36,12 +36,12 @@ public class EmployeeLogin extends AppCompatActivity {
         String nameOfClinic = employee.getNameOfClinic();
         String insurance = employee.getInsuranceTypes();
         String paymentMethod = employee.getPaymentMethod();
-        TextView welcome = (TextView)findViewById(R.id.textView17);
         TextView textView = (TextView)findViewById(R.id.textView5);
+        TextView welcome = (TextView)findViewById(R.id.textView17);
         TextView profiles = (TextView)findViewById(R.id.textView16);
         welcome.setText("Welcome " + name + "!\n");
         textView.setText("You are logged in as employee.");
-        profiles.setText("\nYour address is " + address + ".\nYour phone number is " + phoneNum + ".\nYour name of the clinic is " + nameOfClinic + "." +
+        profiles.setText("\nYour address is " + address + ".\nYour phone number is " + phoneNum + ".\nName of the clinic is " + nameOfClinic + "." +
                 "\nYour insurance type is " + insurance + ".\nYour payment method is " + paymentMethod);
     }
 
@@ -61,7 +61,7 @@ public class EmployeeLogin extends AppCompatActivity {
 
     public void SYSOnClick(View view){
         DataBase dataBase = new DataBase(this);
-        ArrayList<String> services = dataBase.showService(employee.getName());
+        ArrayList<String> services = dataBase.showService(employee.getUserName());
         String service = "";
         for(int i = 0; i < services.size(); i++){
             service += i+1;
@@ -132,39 +132,69 @@ public class EmployeeLogin extends AppCompatActivity {
         LayoutInflater li = LayoutInflater.from(this);
         View deleteWHView = li.inflate(R.layout.edit_working_hour, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Delete your working hour");
+        alertDialogBuilder.setTitle("Edit your working hour");
         alertDialogBuilder.setView(deleteWHView);
-        final EditText before = (EditText) deleteWHView.findViewById(R.id.editText3);
-        final EditText to = (EditText) deleteWHView.findViewById(R.id.editText4);
+        final EditText beforeStart = (EditText) deleteWHView.findViewById(R.id.editText3);
+        final EditText beforeEnd = (EditText) deleteWHView.findViewById(R.id.editText8);
+        final EditText toStart = (EditText) deleteWHView.findViewById(R.id.editText4);
+        final EditText toEnd = (EditText)deleteWHView.findViewById(R.id.editText10);
         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int id) {
-                if(before.getText().toString().equals("") || to.getText().toString().equals("")){
+                boolean pass = true;
+                String beforeSS = beforeStart.getText().toString();
+                String beforeES = beforeEnd.getText().toString();
+                String toSS = toStart.getText().toString();
+                String toES = toEnd.getText().toString();
+
+                if(beforeSS.equals("") || beforeES.equals("") || toSS.equals("") || toES.equals("")){
                     Toast.makeText(EmployeeLogin.this, "Fail, you haven't inout anything", Toast.LENGTH_LONG).show();
+                    pass = false;
                 }
-                else if(before.getText().toString().length() <= 1 || to.getText().toString().length() <= 1){
+                else if(beforeSS.length() != 8 || beforeES.length() != 8 || toSS.length() != 8 || toES.length() != 8){
                     Toast.makeText(EmployeeLogin.this, "Fail, you have input invalid info", Toast.LENGTH_LONG).show();
+                    pass = false;
                 }
                 else{
-                    String b = before.getText().toString();
-                    boolean delete = dataBase.deleteWorkingHour(before.getText().toString(), userName);
-                    if(delete){
-                        if(to.getText().toString().length() <= 1){
-                            dataBase.addWorkingHour(b, userName);
-                            Toast.makeText(EmployeeLogin.this, "Faild", Toast.LENGTH_LONG).show();
-                        }
-                        else{
-                            boolean add = dataBase.addWorkingHour(to.getText().toString(), userName);
-                            if(add){
-                                Toast.makeText(EmployeeLogin.this, "Success!!!", Toast.LENGTH_LONG).show();
-                            }
-                            else{
-                                dataBase.addWorkingHour(b, userName);
-                                Toast.makeText(EmployeeLogin.this, "Faild", Toast.LENGTH_LONG).show();
-                            }
+                    for(int i = 0; i < beforeSS.length(); i++){
+                        if(!Character.isDigit(beforeSS.charAt(i))){
+                            Toast.makeText(EmployeeLogin.this, "Fail, you have input invalid info", Toast.LENGTH_LONG).show();
+                            pass = false;
                         }
                     }
-                    else{
-                        Toast.makeText(EmployeeLogin.this, "Faild", Toast.LENGTH_LONG).show();
+                    for(int i = 0; i < beforeES.length(); i++){
+                        if(!Character.isDigit(beforeES.charAt(i))){
+                            Toast.makeText(EmployeeLogin.this, "Fail, you have input invalid info", Toast.LENGTH_LONG).show();
+                            pass = false;
+                        }
+                    }
+                    for(int i = 0; i < toSS.length(); i++){
+                        if(!Character.isDigit(toSS.charAt(i))){
+                            Toast.makeText(EmployeeLogin.this, "Fail, you have input invalid info", Toast.LENGTH_LONG).show();
+                            pass = false;
+                        }
+                    }
+                    for(int i = 0; i < toES.length(); i++){
+                        if(!Character.isDigit(toES.charAt(i))){
+                            Toast.makeText(EmployeeLogin.this, "Fail, you have input invalid info", Toast.LENGTH_LONG).show();
+                            pass = false;
+                        }
+                    }
+
+                    if(pass) {
+                        boolean delete = dataBase.deleteWorkingHour(beforeSS, beforeES, userName);
+                        if (delete) {
+                            boolean add = dataBase.addWorkingHour(toSS, toES, userName);
+                            if (add) {
+                                Toast.makeText(EmployeeLogin.this, "Success!!!", Toast.LENGTH_LONG).show();
+                                ArrayList<String> d = new ArrayList<>();
+                                d.add(beforeSS);
+                                d.add(beforeES);
+                                dataBase.editWorkingHourClinic(userName, employee.getNameOfClinic(), d);
+                            } else {
+                                dataBase.addWorkingHour(beforeSS, beforeES, userName);
+                                Toast.makeText(EmployeeLogin.this, "Fail", Toast.LENGTH_LONG).show();
+                            }
+                        }
                     }
                 }
                 dataBase.close();

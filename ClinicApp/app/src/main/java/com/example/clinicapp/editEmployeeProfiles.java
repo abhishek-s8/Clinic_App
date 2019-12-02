@@ -96,7 +96,7 @@ public class editEmployeeProfiles extends AppCompatActivity {
         }
         if(!addressS.equals("")) {
             for (int i = 0; i <= addressS.length() - 1; i++) {
-                if (!Character.isDigit(addressS.charAt(i)) && !Character.isLetter(addressS.charAt(i))) {
+                if (!Character.isDigit(addressS.charAt(i)) && !Character.isLetter(addressS.charAt(i)) && !Character.isSpace(addressS.charAt(i))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid");
@@ -152,7 +152,7 @@ public class editEmployeeProfiles extends AppCompatActivity {
         }
         if(!nameOfClinicS.equals("")) {
             for (int i = 0; i <= nameOfClinicS.length() - 1; i++) {
-                if (!Character.isDigit(nameOfClinicS.charAt(i)) && !Character.isLetter(nameOfClinicS.charAt(i))) {
+                if (!Character.isDigit(nameOfClinicS.charAt(i)) && !Character.isLetter(nameOfClinicS.charAt(i)) && !Character.isSpace(nameOfClinicS.charAt(i))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid");
@@ -180,7 +180,7 @@ public class editEmployeeProfiles extends AppCompatActivity {
         }
         if(!insuranceS.equals("")) {
             for (int i = 0; i <= insuranceS.length() - 1; i++) {
-                if (!Character.isDigit(insuranceS.charAt(i)) && !Character.isLetter(insuranceS.charAt(i))) {
+                if (!Character.isDigit(insuranceS.charAt(i)) && !Character.isLetter(insuranceS.charAt(i)) && !Character.isSpace(insuranceS.charAt(i))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid");
@@ -208,7 +208,7 @@ public class editEmployeeProfiles extends AppCompatActivity {
         }
         if(!paymentS.equals("")) {
             for (int i = 0; i <= paymentS.length() - 1; i++) {
-                if (!Character.isDigit(paymentS.charAt(i)) && !Character.isLetter(paymentS.charAt(i))) {
+                if (!Character.isDigit(paymentS.charAt(i)) && !Character.isLetter(paymentS.charAt(i)) && !Character.isSpace(paymentS.charAt(i))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid");
@@ -234,7 +234,7 @@ public class editEmployeeProfiles extends AppCompatActivity {
             }
             dataBase.update("Employee", "userName", userName, "paymentMethod", paymentS);
         }
-        Toast.makeText(editEmployeeProfiles.this, "Success!!!", Toast.LENGTH_LONG).show();
+        Toast.makeText(editEmployeeProfiles.this, "Complete", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, EmployeeLogin.class);
         intent.putExtra("userName", userName);
         intent.putExtra("Name", NameIn);

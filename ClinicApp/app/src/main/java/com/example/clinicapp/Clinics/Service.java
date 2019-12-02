@@ -10,6 +10,8 @@ public class Service {
         this.role = role;
     }
 
+    public Service(){ }
+
     public void setName(String name) {
         this.name = name;
     }

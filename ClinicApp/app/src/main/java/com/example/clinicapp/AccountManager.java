@@ -41,12 +41,12 @@ public class AccountManager extends AppCompatActivity {
             }
             else if(employee.isChecked()){
                 dataBase.remove("Employee", userName.getText().toString());
-                Toast.makeText(AccountManager.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(AccountManager.this, "Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
             else if(client.isChecked()){
                 dataBase.remove("Client", userName.getText().toString());
-                Toast.makeText(AccountManager.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(AccountManager.this, "Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

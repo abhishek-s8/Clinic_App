@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.example.clinicapp.Clinics.Employee;
 import com.example.clinicapp.DataBase.DataBase;
 
 import java.text.ParseException;
@@ -23,16 +24,19 @@ public class addWorkingHourEnd extends AppCompatActivity {
     private int dayOfMonthStart;
     private int dayOfMonth1 = 0;
     private String userName;
+    private Employee employee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_working_hour_end);
+        DataBase dataBase = new DataBase(this);
         Intent intent = getIntent();
         yearStart = intent.getIntExtra("year", 0);
         monthStart = intent.getIntExtra("month", 0);
         dayOfMonthStart = intent.getIntExtra("dayOfMonth", 0);
         userName = intent.getStringExtra("userName");
+        employee = dataBase.getEmployee(userName);
 
         calendarView = (CalendarView)findViewById(R.id.calendarView2);
         if(yearStart == 0){
@@ -63,11 +67,19 @@ public class addWorkingHourEnd extends AppCompatActivity {
             finish();
         }
         else {
-            String workingTime = monthStart + "/" + dayOfMonthStart + "/" + yearStart + " to " + month1 + "/" + dayOfMonth1 + "/" + year1;
+            String monthSS = twoDigits(String.valueOf(monthStart));
+            String daySS = twoDigits(String.valueOf(dayOfMonthStart));
+            String monthES = twoDigits(String.valueOf(month1));
+            String dayES = twoDigits(String.valueOf(dayOfMonth1));
+
+            String workingTimeStart = String.valueOf(yearStart) + monthSS + daySS;
+            String workingTimeEnd = String.valueOf(year1) + monthES + dayES;
             DataBase dataBase = new DataBase(this);
-            boolean success = dataBase.addWorkingHour(workingTime, userName);
+            boolean success = dataBase.addWorkingHour(workingTimeStart, workingTimeEnd, userName);
+
             if(success){
                 Toast.makeText(addWorkingHourEnd.this, "Success!!!", Toast.LENGTH_LONG).show();
+                dataBase.addWorkingHour2Clinic(userName, employee.getNameOfClinic());
                 finish();
             }
             else{
@@ -92,5 +104,14 @@ public class addWorkingHourEnd extends AppCompatActivity {
         else{
             return date.getTime();
         }
+    }
+
+    private String twoDigits(String s){
+        if(s.length() < 2){
+            StringBuilder mss = new StringBuilder(s);
+            mss.insert(0, "0");
+            s = mss.toString();
+        }
+        return s;
     }
 }

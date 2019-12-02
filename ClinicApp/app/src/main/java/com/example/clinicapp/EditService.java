@@ -40,7 +40,7 @@ public class editService extends AppCompatActivity {
         else if(nurse.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by nurse");
             if(success){
-                Toast.makeText(editService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
@@ -51,7 +51,7 @@ public class editService extends AppCompatActivity {
         else if(doctor.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by doctor");
             if(success){
-                Toast.makeText(editService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
@@ -62,7 +62,7 @@ public class editService extends AppCompatActivity {
         else if(staff.isChecked()){
             boolean success = dataBase.editService(userInput1.getText().toString(), userInput2.getText().toString(), " by staff");
             if(success){
-                Toast.makeText(editService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(editService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(editService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();

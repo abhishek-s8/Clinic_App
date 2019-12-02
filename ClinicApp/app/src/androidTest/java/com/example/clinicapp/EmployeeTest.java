@@ -1,11 +1,15 @@
 package com.example.clinicapp;
+
+import com.example.clinicapp.Clinics.Employee;
+
 import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class TheEmployeeTest {
+public class EmployeeTest {
     @Test
     public void employeeUserNameTest(){
         Employee employee = new Employee("George", "123", "George");

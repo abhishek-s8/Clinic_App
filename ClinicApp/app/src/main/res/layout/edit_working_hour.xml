@@ -2,24 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#662196F3"
     android:gravity="center"
+    android:background="#662196F3"
     android:orientation="vertical"
     android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Format of your input: 20190101"
+        android:textColor="#303F9F"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="To be edited:"
+        android:hint="Original start time"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Original end time"
+        android:inputType="textPersonName" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Changed Value"
+        android:hint="Change to (start time):"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Change to (end time):"
         android:inputType="textPersonName" />
 </LinearLayout>

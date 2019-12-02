@@ -11,8 +11,11 @@ import android.widget.EditText;
 
 import com.example.clinicapp.Clinics.Admin;
 import com.example.clinicapp.Clinics.Clients;
+import com.example.clinicapp.Clinics.Clinic;
 import com.example.clinicapp.Clinics.Employee;
 import com.example.clinicapp.DataBase.DataBase;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             String name = client.getName();
             Intent intent = new Intent(this, ClientLogin.class);
             intent.putExtra("Name", name);
+            intent.putExtra("userName", client.getUserName());
             startActivity(intent);
 
         }
@@ -98,6 +102,33 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("All the services provided by our clinic");
         builder.setMessage(service);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface arg0, int arg1){}
+        });
+        AlertDialog b = builder.create();
+        b.show();
+    }
+
+    public void allClinic(View view){
+        DataBase dataBase = new DataBase(this);
+        ArrayList<Clinic> c = dataBase.showAllClinics();
+        String clinics = "";
+        for(int i = 0; i < c.size(); i++){
+            clinics += i+1;
+            clinics += ". ";
+            if(i != c.size()){
+                clinics += c.get(i).getName();
+                clinics += "\n";
+            }
+            else{
+                clinics += c.get(i).getName();
+            }
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("All the clinics");
+        builder.setMessage(clinics);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface arg0, int arg1){}

@@ -114,5 +114,26 @@
             android:text="Show All Services"
             android:textColor="#FFFFFF" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15sp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#C2185B"
+            android:textSize="16sp"
+            android:text="Click below to see all clinics." />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="allClinic"
+            android:textColor="#FFFFFF"
+            android:background="#661976D2"
+            android:text="Show all clinics" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

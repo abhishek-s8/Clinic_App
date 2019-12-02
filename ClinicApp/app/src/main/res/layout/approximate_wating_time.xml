@@ -3,40 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#662196F3"
     android:layout_height="match_parent"
-    tools:context=".ShowAccounts">
+    tools:context=".ApproximateWatingTime">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="#662196F3"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/AccountListEmployee"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-        </ListView>
-
-        <ListView
-            android:id="@+id/AccountListClient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp" />
+            android:gravity="center"
+            android:textColor="#303F9F"
+            android:text="Choose a date"
+            android:textSize="30sp" />
+
+        <CalendarView
+            android:id="@+id/calendarView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:firstDayOfWeek="2"
+            android:minDate="01/01/2000" />
 
         <Button
-            android:id="@+id/finishBtn"
+            android:id="@+id/button28"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
             android:background="#C2185B"
-            android:onClick="fiOnClick"
-            android:text="Finish" />
+            android:onClick="WaitingTime"
+            android:text="Click for waiting time"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

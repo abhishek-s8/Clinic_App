@@ -124,5 +124,33 @@
             android:textColor="#FFFFFF"
             android:textColorHighlight="#7B1FA2" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#7B1FA2"
+            android:onClick="SAC"
+            android:text="Show All Clinics"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C2185B"
+            android:onClick="ServiceByClinic"
+            android:text="Service By Specific Clinic"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

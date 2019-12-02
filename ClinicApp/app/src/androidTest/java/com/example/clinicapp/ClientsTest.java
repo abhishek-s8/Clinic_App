@@ -1,10 +1,12 @@
 package com.example.clinicapp;
 
+import com.example.clinicapp.Clinics.Clients;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TheClientsTest {
+public class ClientsTest {
     @Test
     public void clientUserNameTest(){
         Clients clients = new Clients("Ralph", "123", "Ralph", 19);
@@ -38,7 +40,7 @@ public class TheClientsTest {
     }
 
     @Test
-    public void changePasswordTest(){
+    public void changePasswrodTest(){
         Clients clients = new Clients("Ralph", "123", "Ralph", 19);
         clients.setPassword("456");
         assertEquals("Check the user name of the client account", "456", clients.getPassword());

@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.example.clinicapp.Clinics.Employee;
 import com.example.clinicapp.DataBase.DataBase;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class deleteWorkingHour extends AppCompatActivity {
@@ -24,13 +26,16 @@ public class deleteWorkingHour extends AppCompatActivity {
     private int monthEnd = 0;
     private int dayOfMonthEnd = 0;
     private String userName;
+    private Employee employee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_working_hour);
+        DataBase dataBase = new DataBase(this);
         Intent intent = getIntent();
         userName = intent.getStringExtra("userName");
+        employee = dataBase.getEmployee(userName);
         start = (CalendarView)findViewById(R.id.calendarView3);
         end = (CalendarView)findViewById(R.id.calendarView4);
         start.setMinDate(new Date().getTime());
@@ -71,11 +76,21 @@ public class deleteWorkingHour extends AppCompatActivity {
             finish();
         }
         else {
-            String workingTime = monthStart + "/" + dayOfMonthStart + "/" + yearStart + " to " + monthEnd + "/" + dayOfMonthEnd + "/" + yearEnd;
+            String monthSS = twoDigits(String.valueOf(monthStart));
+            String daySS = twoDigits(String.valueOf(dayOfMonthStart));
+            String monthES = twoDigits(String.valueOf(monthEnd));
+            String dayES = twoDigits(String.valueOf(dayOfMonthEnd));
+
+            String workingTimeStart = String.valueOf(yearStart) + monthSS + daySS;
+            String workingTimeEnd = String.valueOf(yearEnd) + monthES + dayES;
             DataBase dataBase = new DataBase(this);
-            boolean success = dataBase.deleteWorkingHour(workingTime, userName);
+            boolean success = dataBase.deleteWorkingHour(workingTimeStart, workingTimeEnd, userName);
             if(success){
                 Toast.makeText(deleteWorkingHour.this, "Success!!!", Toast.LENGTH_LONG).show();
+                ArrayList<String> d = new ArrayList<>();
+                d.add(workingTimeStart);
+                d.add(workingTimeEnd);
+                dataBase.deleteWorkingHourClinic(employee.getNameOfClinic(), d);
                 finish();
             }
             else{
@@ -100,5 +115,14 @@ public class deleteWorkingHour extends AppCompatActivity {
         else{
             return date.getTime();
         }
+    }
+
+    private String twoDigits(String s){
+        if(s.length() < 2){
+            StringBuilder mss = new StringBuilder(s);
+            mss.insert(0, "0");
+            s = mss.toString();
+        }
+        return s;
     }
 }

@@ -4,62 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpClient">
+    tools:context=".RateClinic">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#662196F3"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Rate The Clinic"
             android:textColor="#303F9F"
-            android:text="Creating Patient Account"
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/UserName"
+            android:id="@+id/editText9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="User Name"
+            android:hint="Name of Clinic"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/Password"
+            android:id="@+id/editText13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Any Comments?"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/Name"
-            android:layout_width="match_parent"
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/Age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Age"
-            android:inputType="textPersonName" />
+            android:isIndicator="false"
+            android:numStars="5"
+            android:stepSize="0.5" />
 
         <Button
-            android:id="@+id/DoneBtn"
+            android:id="@+id/button23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="RateClinic"
+            android:textColor="#FFFFFF"
             android:background="#C2185B"
-            android:onClick="doneOnClick"
-            android:text="Done"
-            android:textColor="#FFFFFF" />
+            android:text="Done" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

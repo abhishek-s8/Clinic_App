@@ -5,11 +5,19 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="ClinicApp"
+        android:label="Clinic App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.clinicapp.deleteWorkingHour"></activity>
+        <activity android:name="com.example.clinicapp.ApproximateWatingTime"></activity>
+        <activity android:name="com.example.clinicapp.MakeAppointment" />
+        <activity android:name="com.example.clinicapp.SearchByName" />
+        <activity android:name="com.example.clinicapp.RateClinic" />
+        <activity android:name="com.example.clinicapp.SearchByWorkingHour" />
+        <activity android:name="com.example.clinicapp.SearchByService" />
+        <activity android:name="com.example.clinicapp.SearchByAddress" />
+        <activity android:name="com.example.clinicapp.ServiceByClinic" />
+        <activity android:name="com.example.clinicapp.deleteWorkingHour" />
         <activity android:name="com.example.clinicapp.addWorkingHourEnd" />
         <activity android:name="com.example.clinicapp.addWorkingHour" />
         <activity android:name="com.example.clinicapp.EditServicesEmployee" />
@@ -19,8 +27,8 @@
         <activity android:name="com.example.clinicapp.deleteService" />
         <activity android:name="com.example.clinicapp.editService" />
         <activity android:name="com.example.clinicapp.addService" />
-        <activity android:name="com.example.clinicapp.SignupEmployee" />
-        <activity android:name="com.example.clinicapp.SignupClient" />
+        <activity android:name="com.example.clinicapp.SignUpEmployee" />
+        <activity android:name="com.example.clinicapp.SignUpClient" />
         <activity android:name="com.example.clinicapp.EmployeeORClient" />
         <activity android:name="com.example.clinicapp.EmployeeLogin" />
         <activity android:name="com.example.clinicapp.AdminLogin" />

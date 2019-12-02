@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.clinicapp.Clinics.Clients;
 import com.example.clinicapp.DataBase.DataBase;
 
-public class SignupClient extends AppCompatActivity {
+public class SignUpClient extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,22 @@ public class SignupClient extends AppCompatActivity {
         String passwordS = password.getText().toString();
         String nameS = name.getText().toString();
         String ageS = age.getText().toString();
+        if(Integer.parseInt(ageS) >= 100){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Invalid Input");
+            builder.setMessage("You haven't enter any information, please try again.");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface arg0, int arg1){}
+            });
+            AlertDialog b = builder.create();
+            userName.setText("");
+            password.setText("");
+            name.setText("");
+            age.setText("");
+            b.show();
+            return;
+        }
 
         if(userNameS.equals("") && passwordS.equals("") && nameS.equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -68,7 +84,6 @@ public class SignupClient extends AppCompatActivity {
         else {
             for(int i = 0; i <= userNameS.length()-1; i++){
                 if(!Character.isDigit(userNameS.charAt(i)) && !Character.isLetter(userNameS.charAt(i))){
-                    System.out.println("hhhh");
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid, please try again.");
@@ -87,7 +102,6 @@ public class SignupClient extends AppCompatActivity {
             }
             for(int i = 0; i <= passwordS.length()-1; i++){
                 if(!Character.isDigit(passwordS.charAt(i)) && !Character.isLetter(passwordS.charAt(i))){
-                    System.out.println("hhh");
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid, please try again.");
@@ -106,7 +120,6 @@ public class SignupClient extends AppCompatActivity {
             }
             for(int i = 0; i <= nameS.length()-1; i++){
                 if(!Character.isDigit(nameS.charAt(i)) && !Character.isLetter(nameS.charAt(i))){
-                    System.out.println("hh");
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
                     builder.setMessage("The information you entered are invalid, please try again.");
@@ -164,7 +177,7 @@ public class SignupClient extends AppCompatActivity {
                 int i = Integer.parseInt(ageS);
                 client.setAge(i);
                 dataBase.insertClient(client);
-                Toast.makeText(SignupClient.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpClient.this, "Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

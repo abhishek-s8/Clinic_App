@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MakeAppointment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#662196F3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Choose A Date"
+            android:textColor="#303F9F"
+            android:textSize="30sp" />
+
+        <CalendarView
+            android:id="@+id/calendarView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:firstDayOfWeek="2"
+            android:minDate="01/01/2000" />
+
+        <EditText
+            android:id="@+id/editText12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name of Doctor"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button27"
+            android:textColor="#FFFFFF"
+            android:background="#C2185B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="book"
+            android:text="Done" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
