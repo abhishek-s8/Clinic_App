@@ -46,27 +46,35 @@ public class SearchByWorkingHour extends AppCompatActivity {
             }
         }
         clinics = dataBase.ByWorkingHour(workingHour.getText().toString());
-        workingHour.setText("");
-
         String c = "";
-        for(int i = 0; i < clinics.size(); i++){
-            if(i != clinics.size()){
-                c += clinics.get(i);
-                c += "\n";
-            }
-            else{
-                c += clinics.get(i);
+        if(clinics == null){
+            c = "Sorry, there is no clinic working at this time";
+        }
+        else {
+            for (int i = 0; i < clinics.size(); i++) {
+                c += i + 1;
+                c += ". Dr.";
+                if (i != clinics.size()) {
+                    c += clinics.get(i);
+                    c += "\n";
+                } else {
+                    c += clinics.get(i);
+                }
             }
         }
+        String time = workingHour.getText().toString();
+        StringBuilder to = new StringBuilder(time);
+        to.insert(4, "/");
+        to.insert(7, "/");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("List of clinic");
+        builder.setTitle("List of doctors working at " + to.toString());
         builder.setMessage(c);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface arg0, int arg1){}
         });
         AlertDialog b = builder.create();
+        workingHour.setText("");
         b.show();
-        finish();
     }
 }

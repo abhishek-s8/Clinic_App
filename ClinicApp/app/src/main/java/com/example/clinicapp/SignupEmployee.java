@@ -35,26 +35,26 @@ public class SignupEmployee extends AppCompatActivity {
             public void onClick(DialogInterface dialog,int id) {
                 boolean pass = true;
                 if(nameOfClinic.getText().toString().equals("") || address.getText().toString().equals("")){
-                    Toast.makeText(SignupEmployee.this, "Fail, you haven't inout anything", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupEmployee.this, "You have NOT input anything", Toast.LENGTH_LONG).show();
                     pass = false;
                 }
                 else{
                     for(int i = 0; i < nameOfClinic.getText().toString().length(); i++){
                         if(!Character.isDigit(nameOfClinic.getText().toString().charAt(i)) && !Character.isLetter(nameOfClinic.getText().toString().charAt(i)) && !Character.isSpace(nameOfClinic.getText().toString().charAt(i))){
-                            Toast.makeText(SignupEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignupEmployee.this, "Error with Name of Clinic (Only Letters)", Toast.LENGTH_LONG).show();
                             pass = false;
                         }
                     }
                     for(int i = 0; i < address.getText().toString().length(); i++){
-                        if(!Character.isDigit(address.getText().toString().charAt(i)) && !Character.isLetter(address.getText().toString().charAt(i)) && !Character.isSpace(address.getText().toString().charAt(i))){
-                            Toast.makeText(SignupEmployee.this, "Fail, invalid info", Toast.LENGTH_LONG).show();
+                        if(!Character.isDigit(address.getText().toString().charAt(i)) && !Character.isLetter(address.getText().toString().charAt(i)) && !Character.isDigit(address.getText().toString().charAt(i)) && !Character.isSpace(address.getText().toString().charAt(i))){
+                            Toast.makeText(SignupEmployee.this, "Error with Address (Only Letters and Numbers)", Toast.LENGTH_LONG).show();
                             pass = false;
                         }
                     }
                 }
                 if(pass) {
                     if (dataBase.clinicExist(nameOfClinic.getText().toString())) {
-                        Toast.makeText(SignupEmployee.this, "This clinic has exist", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignupEmployee.this, "This clinic already exists!", Toast.LENGTH_LONG).show();
                     } else {
                         Clinic clinic = new Clinic();
                         clinic.setName(nameOfClinic.getText().toString());
@@ -95,7 +95,7 @@ public class SignupEmployee extends AppCompatActivity {
         if(userNameS.equals("") || passwordS.equals("") || nameS.equals("") || addressS.equals("") || phoneNumS.equals("") || nameOfClinicS.equals("") || insuranceS.equals("") || paymentS.equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("You haven't enter any information, please try again.");
+            builder.setMessage("No information was entered. Please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -115,7 +115,7 @@ public class SignupEmployee extends AppCompatActivity {
         else if(userNameS.length() > 50 || passwordS.length() > 50 || nameS.length() > 50 || addressS.length() > 50 || phoneNumS.length() != 10 || nameOfClinicS.length() > 50 || insuranceS.length() > 50 || paymentS.length() > 50){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("The information you entered are invalid, please try again.");
+            builder.setMessage("Can only be 50 characters maximum. Please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -135,7 +135,7 @@ public class SignupEmployee extends AppCompatActivity {
         else if(!dataBase.clinicExist(nameOfClinicS)){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("The clinic doesn't exist, please try again.");
+            builder.setMessage("The clinic doesn't exist. Please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -154,10 +154,10 @@ public class SignupEmployee extends AppCompatActivity {
         }
         else {
             for(int i = 0; i <= userNameS.length()-1; i++){
-                if(!Character.isDigit(userNameS.charAt(i)) && !Character.isLetter(userNameS.charAt(i)) ){
+                if(!Character.isDigit(userNameS.charAt(i)) && !Character.isLetter(userNameS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with UserName (only Digits and Letters, NO SPACES). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -179,7 +179,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(passwordS.charAt(i)) && !Character.isLetter(passwordS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Password (only Digits and Letters, NO SPACES). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -201,7 +201,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(nameS.charAt(i)) && !Character.isLetter(nameS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Name (only Digits and Letters, NO SPACES). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -223,7 +223,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(addressS.charAt(i)) && !Character.isLetter(addressS.charAt(i)) && !Character.isSpace(addressS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Address (only Digits and Letters). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -245,7 +245,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(phoneNumS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Phone Number (only 10 Digits, NO SPACES). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -267,7 +267,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(nameOfClinicS.charAt(i)) && !Character.isLetter(nameOfClinicS.charAt(i)) && !Character.isSpace(nameOfClinicS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Clinic Name (only Digits and Letters, make sure Clinic exists). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -289,7 +289,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(insuranceS.charAt(i)) && !Character.isLetter(insuranceS.charAt(i)) && !Character.isSpace(insuranceS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Insurance (only Digits and Letters). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -311,7 +311,7 @@ public class SignupEmployee extends AppCompatActivity {
                 if(!Character.isDigit(paymentS.charAt(i)) && !Character.isLetter(paymentS.charAt(i)) && !Character.isSpace(paymentS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("Error with Payment (only Digits and Letters). Please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -332,7 +332,7 @@ public class SignupEmployee extends AppCompatActivity {
             if(dataBase.eExist(userNameS)){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Invalid Input");
-                builder.setMessage("This user name has exist, please try again.");
+                builder.setMessage("This user name already exists. Please try again or log in.");
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface arg0, int arg1){}
@@ -359,7 +359,7 @@ public class SignupEmployee extends AppCompatActivity {
                 employee.setNameOfClinic(nameOfClinicS);
                 employee.setPaymentMethod(paymentS);
                 dataBase.insertEmployee(employee);
-                Toast.makeText(SignupEmployee.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignupEmployee.this, "Complete", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

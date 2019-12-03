@@ -26,6 +26,7 @@
             android:id="@+id/calendarView3"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:firstDayOfWeek="2"
             android:maxDate="12/31/2200"
             android:minDate="01/01/2000" />
 
@@ -33,6 +34,7 @@
             android:id="@+id/calendarView4"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:firstDayOfWeek="2"
             android:maxDate="12/31/2200"
             android:minDate="01/01/2000" />
 

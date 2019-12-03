@@ -41,15 +41,19 @@ public class ServiceByClinic extends AppCompatActivity {
         DataBase dataBase = new DataBase(this);
         ArrayList<Service> services = dataBase.getServiceOfClinic(nameOfClinic.getText().toString());
         String service = "";
-        for(int i = 0; i < services.size(); i++){
-            service += i+1;
-            service += ". ";
-            if(i != services.size()){
-                service += services.get(i).getName();
-                service += "\n";
-            }
-            else{
-                service += services.get(i).getName();
+        if(services == null){
+            service = "This clinic doesn't have any service yet";
+        }
+        else {
+            for (int i = 0; i < services.size(); i++) {
+                service += i + 1;
+                service += ". ";
+                if (i != services.size()) {
+                    service += services.get(i).getName();
+                    service += "\n";
+                } else {
+                    service += services.get(i).getName();
+                }
             }
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -40,30 +40,29 @@ public class SearchByService extends AppCompatActivity {
             }
         }
         clinics = dataBase.ByService(service.getText().toString());
-        service.setText("");
         String c = "";
-        for(int i = 0; i < clinics.size(); i++){
-            if(i != clinics.size()){
-                c += clinics.get(i);
-                c += "\n";
-            }
-            else{
-                c += clinics.get(i);
-            }
+        if(clinics == null){
+            c = "Sorry, there is no clinic provide this service";
         }
-        if (clinics!=null)
-        {
-
+        else {
+            for (int i = 0; i < clinics.size(); i++) {
+                if (i != clinics.size()) {
+                    c += clinics.get(i);
+                    c += "\n";
+                } else {
+                    c += clinics.get(i);
+                }
+            }
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("List of clinic provide " + service.getText().toString());
         builder.setMessage(c);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface arg0, int arg1){ }
+            public void onClick(DialogInterface arg0, int arg1){}
         });
         AlertDialog b = builder.create();
+        service.setText("");
         b.show();
-        finish();
     }
 }

@@ -39,6 +39,7 @@ public class DeleteWorkingHour extends AppCompatActivity {
         start = (CalendarView)findViewById(R.id.calendarView3);
         end = (CalendarView)findViewById(R.id.calendarView4);
         start.setMinDate(new Date().getTime());
+        end.setDate(new Date().getTime());
         end.setMinDate(new Date().getTime());
         start.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -47,17 +48,15 @@ public class DeleteWorkingHour extends AppCompatActivity {
                 yearStart = year;
                 monthStart = month;
                 dayOfMonthStart = dayOfMonth;
+                if(yearStart == 0){
+                    end.setMinDate(new Date().getTime());
+                }
+                else {
+                    long currentTime = intToLongTime(yearStart, monthStart, dayOfMonthStart);
+                    end.setMinDate(currentTime);
+                }
             }
         });
-
-        end.setDate(new Date().getTime());
-        if(yearStart == 0){
-            end.setMinDate(new Date().getTime());
-        }
-        else {
-            long currentTime = intToLongTime(yearStart, monthStart, dayOfMonthStart);
-            end.setMinDate(currentTime);
-        }
         end.setDate(new Date().getTime());
         end.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -71,22 +70,27 @@ public class DeleteWorkingHour extends AppCompatActivity {
     }
 
     public void deleteWH(View view){
+        DataBase dataBase = new DataBase(this);
+        String monthSS = twoDigits(String.valueOf(monthStart));
+        String daySS = twoDigits(String.valueOf(dayOfMonthStart));
+        String monthES = twoDigits(String.valueOf(monthEnd));
+        String dayES = twoDigits(String.valueOf(dayOfMonthEnd));
+        String workingTimeStart = String.valueOf(yearStart) + monthSS + daySS;
+        String workingTimeEnd = String.valueOf(yearEnd) + monthES + dayES;
+        System.out.println(workingTimeStart);
+        System.out.println((workingTimeEnd));
         if(yearStart == 0 || yearEnd == 0){
             Toast.makeText(DeleteWorkingHour.this, "You didn't choose a date, please try again.", Toast.LENGTH_LONG).show();
             finish();
         }
+        else if(Integer.parseInt(workingTimeStart) > Integer.parseInt(workingTimeEnd)){
+            Toast.makeText(DeleteWorkingHour.this, "You chose a invalid date.", Toast.LENGTH_LONG).show();
+            finish();
+        }
         else {
-            String monthSS = twoDigits(String.valueOf(monthStart));
-            String daySS = twoDigits(String.valueOf(dayOfMonthStart));
-            String monthES = twoDigits(String.valueOf(monthEnd));
-            String dayES = twoDigits(String.valueOf(dayOfMonthEnd));
-
-            String workingTimeStart = String.valueOf(yearStart) + monthSS + daySS;
-            String workingTimeEnd = String.valueOf(yearEnd) + monthES + dayES;
-            DataBase dataBase = new DataBase(this);
             boolean success = dataBase.deleteWorkingHour(workingTimeStart, workingTimeEnd, userName);
             if(success){
-                Toast.makeText(DeleteWorkingHour.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteWorkingHour.this, "Complete", Toast.LENGTH_LONG).show();
                 ArrayList<String> d = new ArrayList<>();
                 d.add(workingTimeStart);
                 d.add(workingTimeEnd);

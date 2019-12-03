@@ -42,7 +42,7 @@ public class EditServicesEmployee extends AppCompatActivity {
         if(add.isChecked()){
             if(dataBase.serviceExist(addService.getText().toString())){
                 dataBase.update("Service", "service", addService.getText().toString(), "person", employee.getUserName());
-                Toast.makeText(EditServicesEmployee.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditServicesEmployee.this, "Complete", Toast.LENGTH_LONG).show();
                 dataBase.addService2Clinic(employee.getNameOfClinic(), userName);
                 finish();
             }else{
@@ -51,9 +51,9 @@ public class EditServicesEmployee extends AppCompatActivity {
             }
         }
         else if(delete.isChecked()){
-            if(dataBase.serviceExist(deleteService.getText().toString())){
+            if(dataBase.serviceExist(deleteService.getText().toString()) && dataBase.serviceExistEmployee(userName, deleteService.getText().toString())){
                 dataBase.update("Service", "service", deleteService.getText().toString(), "person", null);
-                Toast.makeText(EditServicesEmployee.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditServicesEmployee.this, "Complete", Toast.LENGTH_LONG).show();
                 dataBase.deleteServiceClinic(employee.getNameOfClinic(), deleteService.getText().toString());
                 finish();
             }

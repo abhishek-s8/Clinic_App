@@ -35,7 +35,7 @@ public class SignupClient extends AppCompatActivity {
         if(Integer.parseInt(ageS) >= 100){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("You haven't enter any information, please try again.");
+            builder.setMessage("No information was entered, please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -52,7 +52,7 @@ public class SignupClient extends AppCompatActivity {
         if(userNameS.equals("") && passwordS.equals("") && nameS.equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("You haven't enter any information, please try again.");
+            builder.setMessage("No information was entered, please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -68,7 +68,7 @@ public class SignupClient extends AppCompatActivity {
         else if(userNameS.length() > 50 && passwordS.length() > 50 && nameS.length() > 50){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Invalid Input");
-            builder.setMessage("The information you entered are too long, please try again.");
+            builder.setMessage("The information you entered are too long (only 50 characters max), please try again.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface arg0, int arg1){}
@@ -86,7 +86,7 @@ public class SignupClient extends AppCompatActivity {
                 if(!Character.isDigit(userNameS.charAt(i)) && !Character.isLetter(userNameS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("The username you entered is invalid (Only letters and digits, NO SPACES), please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -104,7 +104,7 @@ public class SignupClient extends AppCompatActivity {
                 if(!Character.isDigit(passwordS.charAt(i)) && !Character.isLetter(passwordS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("The password you entered is invalid (Only letters and digits, NO SPACES), please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -122,7 +122,7 @@ public class SignupClient extends AppCompatActivity {
                 if(!Character.isDigit(nameS.charAt(i)) && !Character.isLetter(nameS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("The name you entered is invalid (Only letters and digits, NO SPACES), please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -140,7 +140,7 @@ public class SignupClient extends AppCompatActivity {
                 if(!Character.isDigit(ageS.charAt(i))){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid, please try again.");
+                    builder.setMessage("The age you entered is invalid (Only digits, NO SPACES), please try again.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface arg0, int arg1){}
@@ -157,7 +157,7 @@ public class SignupClient extends AppCompatActivity {
             if(dataBase.cExist(userNameS)){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Invalid Input");
-                builder.setMessage("This user name has exist, please try again.");
+                builder.setMessage("This user name already exists, please try again or log in.");
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface arg0, int arg1){}

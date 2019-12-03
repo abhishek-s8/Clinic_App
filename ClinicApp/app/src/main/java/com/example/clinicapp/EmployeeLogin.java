@@ -185,7 +185,7 @@ public class EmployeeLogin extends AppCompatActivity {
                         if (delete) {
                             boolean add = dataBase.addWorkingHour(toSS, toES, userName);
                             if (add) {
-                                Toast.makeText(EmployeeLogin.this, "Success!!!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(EmployeeLogin.this, "Complete", Toast.LENGTH_LONG).show();
                                 ArrayList<String> d = new ArrayList<>();
                                 d.add(beforeSS);
                                 d.add(beforeES);

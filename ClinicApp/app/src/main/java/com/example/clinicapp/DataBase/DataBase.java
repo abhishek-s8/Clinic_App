@@ -273,8 +273,11 @@ public class DataBase extends SQLiteOpenHelper {
         return client;
     }
 
-    public void addAppointment(String userNameClient, String time, String userNameEmployee){
+    public boolean addAppointment(String userNameClient, String time, String userNameEmployee){
         Employee employee = getEmployee(userNameEmployee);
+        if(employee == null){
+            return false;
+        }
         ArrayList<String> appointment = new ArrayList<>();
         appointment.add(time);
         appointment.add(employee.getName());
@@ -283,6 +286,7 @@ public class DataBase extends SQLiteOpenHelper {
         Gson gson = new Gson();
         String a = gson.toJson(appointment);
         update("Client", "userName", userNameClient, "appointment", a);
+        return true;
     }
 
     public void deleteAppointment(String userNameClient){
@@ -489,17 +493,6 @@ public class DataBase extends SQLiteOpenHelper {
     }
 
     public boolean addWorkingHour(String workingHourStart, String workingHourEnd, String userName){
-        /*
-        long startLong = StringToLong(workingHourStart);
-        long endLong = StringToLong(workingHourEnd);
-        if(coverAll(startLong, endLong, userName)){
-            return true;
-        }
-        else if(coverStart(startLong, endLong, userName)){
-
-        }
-         */
-
         ArrayList<String> workingHourPeriod = new ArrayList<>();
         workingHourPeriod.add(workingHourStart);
         workingHourPeriod.add(workingHourEnd);
@@ -535,51 +528,6 @@ public class DataBase extends SQLiteOpenHelper {
         return true;
     }
 
-    private boolean coverAll(long start, long end, String userName){
-        ArrayList<ArrayList> workingHourExist = getWorkingHours(userName, "1");
-        if (workingHourExist == null){
-            return false;
-        }
-        for(int i = 0; i < workingHourExist.size(); i++){
-            long startExist = StringToLong(workingHourExist.get(i).get(0).toString());
-            long endExist = StringToLong(workingHourExist.get(i).get(1).toString());
-            if(start < startExist && end < endExist){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean coverStart(long start, long end, String userName){
-        ArrayList<ArrayList> workingHourExist = getWorkingHours(userName, "1");
-        if (workingHourExist == null){
-            return false;
-        }
-        for(int i = 0; i < workingHourExist.size(); i++){
-            long startExist = StringToLong(workingHourExist.get(i).get(0).toString());
-            long endExist = StringToLong(workingHourExist.get(i).get(1).toString());
-            if(start < startExist && end > endExist){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean coverEnd(long start, long end, String userName){
-        ArrayList<ArrayList> workingHourExist = getWorkingHours(userName, "1");
-        if (workingHourExist == null){
-            return false;
-        }
-        for(int i = 0; i < workingHourExist.size(); i++){
-            long startExist = StringToLong(workingHourExist.get(i).get(0).toString());
-            long endExist = StringToLong(workingHourExist.get(i).get(1).toString());
-            if(end < endExist && start > startExist){
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean deleteWorkingHour(String workingHourStart, String workingHourEnd, String userName){
         ArrayList<String> workingHours = new ArrayList<>();
         workingHours.add(workingHourStart);
@@ -597,21 +545,18 @@ public class DataBase extends SQLiteOpenHelper {
             Type type = new TypeToken<ArrayList<ArrayList>>() {}.getType();
             ArrayList<ArrayList> outputString = gson.fromJson(cursor.getString(0), type);
             for(int i = 0; i < outputString.size(); i++){
-                if(outputString.contains(workingHours)){
+                if(outputString.get(i).get(0).equals(workingHourStart) && outputString.get(i).get(1).equals(workingHourEnd)){
                     outputString.remove(i);
                     if(outputString.size() == 0){
                         updateToNull("Employee", "userName", userName, "workingHour");
-                        cursor.close();
-                        database.close();
-                        return true;
                     }
                     else{
                         wS= gson.toJson(outputString);
                         update("Employee", "userName", userName, "workingHour", wS);
-                        cursor.close();
-                        database.close();
-                        return true;
                     }
+                    cursor.close();
+                    database.close();
+                    return true;
                 }
             }
         }
@@ -685,6 +630,19 @@ public class DataBase extends SQLiteOpenHelper {
             serviceOfEmployee = null;
         }
         return serviceOfEmployee;
+    }
+
+    public boolean serviceExistEmployee(String userName, String service){
+        ArrayList<Service> s = getServiceOfEmployee(userName);
+        if(s == null){
+            return false;
+        }
+        for (int i = 0; i < s.size(); i++){
+            if(s.get(i).getName().equals(service)){
+                return true;
+            }
+        }
+        return false;
     }
 
     //Clinic Functions
@@ -813,8 +771,8 @@ public class DataBase extends SQLiteOpenHelper {
             return;
         }
         else{
-            Type type = new TypeToken<ArrayList<String>>() {}.getType();
-            ArrayList<String> existService = gson.fromJson(cursor.getString(0), type);
+            Type type = new TypeToken<ArrayList<Service>>() {}.getType();
+            ArrayList<Service> existService = gson.fromJson(cursor.getString(0), type);
             for(int i = 0; i < existService.size(); i++){
                 if(existService.contains(delete)){
                     existService.remove(delete);
@@ -846,6 +804,9 @@ public class DataBase extends SQLiteOpenHelper {
         else{
             clinics = null;
         }
+        if(clinics.size() == 0){
+            clinics = null;
+        }
         cursor.close();
         database.close();
         return clinics;
@@ -859,10 +820,9 @@ public class DataBase extends SQLiteOpenHelper {
         if(cursor.getCount() > 0) {
             for (int i = 0; i < cursor.getCount(); i++) {
                 ArrayList<Service> services = getServiceOfClinic(cursor.getString(0));
-                if(services != null)
-                {
-                    for(int j = 0; j < services.size(); j++){
-                        if(services.get(j).getName().equals(service) && !clinics.contains(cursor.getString(0))){
+                if(services != null) {
+                    for (int j = 0; j < services.size(); j++) {
+                        if (services.get(j).getName().equals(service) && !clinics.contains(cursor.getString(0))) {
                             clinics.add(cursor.getString(0));
                         }
                     }
@@ -871,6 +831,9 @@ public class DataBase extends SQLiteOpenHelper {
             }
         }
         else{
+            clinics = null;
+        }
+        if(clinics.size() == 0){
             clinics = null;
         }
         cursor.close();
@@ -896,11 +859,14 @@ public class DataBase extends SQLiteOpenHelper {
                             employees.add(employee.getName() + " of " + employee.getNameOfClinic());
                         }
                     }
-                    cursor.moveToNext();
                 }
+                cursor.moveToNext();
             }
         }
         else{
+            employees = null;
+        }
+        if(employees.size() == 0){
             employees = null;
         }
         cursor.close();

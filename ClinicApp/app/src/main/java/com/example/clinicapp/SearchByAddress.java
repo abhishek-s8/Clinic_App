@@ -41,26 +41,29 @@ public class SearchByAddress extends AppCompatActivity {
         }
 
         clinics = dataBase.ByAddress(addressOfClinic.getText().toString());
-        addressOfClinic.setText("");
         String c = "";
-        for(int i = 0; i < clinics.size(); i++){
-            if(i != clinics.size()){
-                c += clinics.get(i);
-                c += "\n";
-            }
-            else{
-                c += clinics.get(i);
+        if(clinics == null){
+            c = "Sorry, there is no clinic at this location";
+        }
+        else {
+            for (int i = 0; i < clinics.size(); i++) {
+                if (i != clinics.size()) {
+                    c += clinics.get(i);
+                    c += "\n";
+                } else {
+                    c += clinics.get(i);
+                }
             }
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("List of clinic");
+        builder.setTitle("List of clinic at " + addressOfClinic.getText().toString());
         builder.setMessage(c);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface arg0, int arg1){}
         });
         AlertDialog b = builder.create();
+        addressOfClinic.setText("");
         b.show();
-        finish();
     }
 }

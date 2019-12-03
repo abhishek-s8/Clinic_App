@@ -13,7 +13,7 @@ import com.example.clinicapp.DataBase.DataBase;
 
 import java.util.Date;
 
-public class ApproximateWatingTime extends AppCompatActivity {
+public class ApproximateWaitingTime extends AppCompatActivity {
     private String userName;
     private int y;
     private int m;
@@ -22,7 +22,7 @@ public class ApproximateWatingTime extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.approximate_wating_time);
+        setContentView(R.layout.approximate_waiting_time);
         Intent intent = getIntent();
         userName = intent.getStringExtra("userName");
         CalendarView calendarView = (CalendarView)findViewById(R.id.calendarView6);
@@ -58,7 +58,7 @@ public class ApproximateWatingTime extends AppCompatActivity {
                 message = "Sorry, you can make an appointment at the date you choose";
             }
             else if(waitingTime == 0){
-                message = "You will be the first patient at the date you choose";
+                message = "Congratulations, you will be the first patient at the date you choose";
             }
             else {
                 message = "Your approximate waiting time is " + waitingTime + " minutes";

@@ -1,9 +1,7 @@
 package com.example.clinicapp;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,23 +41,10 @@ public class editEmployeeProfiles extends AppCompatActivity {
         String paymentS = paymentMethod.getText().toString();
 
         if(nameS.length() > 50 || addressS.length() > 50 || phoneNumS.length() != 10 || nameOfClinicS.length() > 50 || insuranceS.length() > 50 || paymentS.length() > 50){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Invalid Input");
-            builder.setMessage("The information you entered are too long");
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
-                @Override
-                public void onClick(DialogInterface arg0, int arg1){}
-            });
-            AlertDialog b = builder.create();
-            name.setText("");
-            address.setText("");
-            phoneNum.setText("");
-            insuranceType.setText("");
-            nameOfClinic.setText("");
-            paymentMethod.setText("");
-            b.show();
+            Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are too long", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, EmployeeLogin.class);
             intent.putExtra("userName", userName);
+            intent.putExtra("Name", NameIn);
             startActivity(intent);
             finish();
             return;
@@ -68,24 +53,10 @@ public class editEmployeeProfiles extends AppCompatActivity {
         if(!nameS.equals("")) {
             for (int i = 0; i <= nameS.length() - 1; i++) {
                 if (!Character.isDigit(nameS.charAt(i)) && !Character.isLetter(nameS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
@@ -97,24 +68,10 @@ public class editEmployeeProfiles extends AppCompatActivity {
         if(!addressS.equals("")) {
             for (int i = 0; i <= addressS.length() - 1; i++) {
                 if (!Character.isDigit(addressS.charAt(i)) && !Character.isLetter(addressS.charAt(i)) && !Character.isSpace(addressS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
@@ -125,24 +82,10 @@ public class editEmployeeProfiles extends AppCompatActivity {
         if(!phoneNumS.equals("")) {
             for (int i = 0; i <= phoneNumS.length() - 1; i++) {
                 if (!Character.isDigit(phoneNumS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
@@ -153,52 +96,35 @@ public class editEmployeeProfiles extends AppCompatActivity {
         if(!nameOfClinicS.equals("")) {
             for (int i = 0; i <= nameOfClinicS.length() - 1; i++) {
                 if (!Character.isDigit(nameOfClinicS.charAt(i)) && !Character.isLetter(nameOfClinicS.charAt(i)) && !Character.isSpace(nameOfClinicS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
                 }
             }
-            dataBase.update("Employee", "userName", userName, "nameOfClinic", nameOfClinicS);
+            if(dataBase.clinicExist(nameOfClinicS)){
+                dataBase.update("Employee", "userName", userName, "nameOfClinic", nameOfClinicS);
+            }
+            else{
+                Toast.makeText(editEmployeeProfiles.this, "Fail, the clinic you entered doesn't exist", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, EmployeeLogin.class);
+                intent.putExtra("userName", userName);
+                intent.putExtra("Name", NameIn);
+                startActivity(intent);
+                finish();
+                return;
+            }
         }
         if(!insuranceS.equals("")) {
             for (int i = 0; i <= insuranceS.length() - 1; i++) {
                 if (!Character.isDigit(insuranceS.charAt(i)) && !Character.isLetter(insuranceS.charAt(i)) && !Character.isSpace(insuranceS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
@@ -209,24 +135,10 @@ public class editEmployeeProfiles extends AppCompatActivity {
         if(!paymentS.equals("")) {
             for (int i = 0; i <= paymentS.length() - 1; i++) {
                 if (!Character.isDigit(paymentS.charAt(i)) && !Character.isLetter(paymentS.charAt(i)) && !Character.isSpace(paymentS.charAt(i))) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Invalid Input");
-                    builder.setMessage("The information you entered are invalid");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                        }
-                    });
-                    AlertDialog b = builder.create();
-                    name.setText("");
-                    address.setText("");
-                    phoneNum.setText("");
-                    insuranceType.setText("");
-                    nameOfClinic.setText("");
-                    paymentMethod.setText("");
-                    b.show();
+                    Toast.makeText(editEmployeeProfiles.this, "Fail, the information you entered are invalid", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, EmployeeLogin.class);
                     intent.putExtra("userName", userName);
+                    intent.putExtra("Name", NameIn);
                     startActivity(intent);
                     finish();
                     return;
@@ -234,6 +146,18 @@ public class editEmployeeProfiles extends AppCompatActivity {
             }
             dataBase.update("Employee", "userName", userName, "paymentMethod", paymentS);
         }
+
+        if(nameS.equals("") && addressS.equals("") && phoneNumS.equals("") && nameOfClinicS.equals("") && insuranceS.equals("") && paymentS.equals("")){
+            Toast.makeText(editEmployeeProfiles.this, "Your profile will maintain the same", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, EmployeeLogin.class);
+            intent.putExtra("userName", userName);
+            intent.putExtra("Name", NameIn);
+            startActivity(intent);
+            dataBase.close();
+            finish();
+            return;
+        }
+
         Toast.makeText(editEmployeeProfiles.this, "Complete", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, EmployeeLogin.class);
         intent.putExtra("userName", userName);

@@ -32,14 +32,15 @@ public class RateClinic extends AppCompatActivity {
     public void RateClinic(View view){
         DataBase dataBase = new DataBase(this);
         EditText nameOfClinic = (EditText) findViewById(R.id.editText9);
-        if(nameOfClinic.getText().toString().equals("")){
+        EditText common = (EditText)findViewById(R.id.editText13);
+        if(nameOfClinic.getText().toString().equals("") || common.getText().toString().equals("")){
             Toast.makeText(RateClinic.this, "Fail, you haven't input anything", Toast.LENGTH_LONG).show();
         }
         else if(!dataBase.clinicExist(nameOfClinic.getText().toString())){
             Toast.makeText(RateClinic.this, "Fail, this clinic doesn't exist", Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(RateClinic.this, "You rate " + rate, Toast.LENGTH_LONG).show();
+            Toast.makeText(RateClinic.this, "You rated " + rate, Toast.LENGTH_LONG).show();
             dataBase.rate(nameOfClinic.getText().toString(), rate);
         }
         dataBase.close();

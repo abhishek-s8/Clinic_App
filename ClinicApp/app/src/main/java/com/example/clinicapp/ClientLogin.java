@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.clinicapp.Clinics.Employee;
 import com.example.clinicapp.DataBase.DataBase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClientLogin extends AppCompatActivity {
@@ -63,7 +64,7 @@ public class ClientLogin extends AppCompatActivity {
     }
 
     public void AWT(View view){
-        Intent intent = new Intent(this, ApproximateWatingTime.class);
+        Intent intent = new Intent(this, ApproximateWaitingTime.class);
         intent.putExtra("userName", userName);
         startActivity(intent);
     }
@@ -76,10 +77,16 @@ public class ClientLogin extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface arg0, int arg1){
-                String userNameEmployee = dataBase.getAppointment(userName).get(1);
-                dataBase.deleteAppointment(userName);
-                dataBase.deleteAppointmentEmployee(userNameEmployee);
-                Toast.makeText(ClientLogin.this, "Your have successfully delete your appointment", Toast.LENGTH_LONG).show();
+                ArrayList<String> appointment = dataBase.getAppointment(userName);
+                if(appointment == null){
+                    Toast.makeText(ClientLogin.this, "Sorry, you don't have any appointment", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    String userNameEmployee = appointment.get(1);
+                    dataBase.deleteAppointment(userName);
+                    dataBase.deleteAppointmentEmployee(userNameEmployee);
+                    Toast.makeText(ClientLogin.this, "Your have successfully delete your appointment", Toast.LENGTH_LONG).show();
+                }
             }
         });
         AlertDialog b = builder.create();
@@ -113,19 +120,23 @@ public class ClientLogin extends AppCompatActivity {
         DataBase dataBase = new DataBase(this);
         List<Employee> accountsE = dataBase.showAllEmployees();
         String doctors = "";
-        for(int i = 0; i < accountsE.size(); i++){
-            doctors += i+1;
-            doctors += ". ";
-            if(i != accountsE.size()){
-                doctors += accountsE.get(i).getName();
-                doctors += " of ";
-                doctors += accountsE.get(i).getNameOfClinic();
-                doctors += "\n";
-            }
-            else{
-                doctors += accountsE.get(i).getName();
-                doctors += " of ";
-                doctors += accountsE.get(i).getNameOfClinic();
+        if(accountsE == null){
+            doctors = "Sorry, there is no doctor sign up yet";
+        }
+        else {
+            for (int i = 0; i < accountsE.size(); i++) {
+                doctors += i + 1;
+                doctors += ". Dr.";
+                if (i != accountsE.size()) {
+                    doctors += accountsE.get(i).getName();
+                    doctors += " of ";
+                    doctors += accountsE.get(i).getNameOfClinic();
+                    doctors += "\n";
+                } else {
+                    doctors += accountsE.get(i).getName();
+                    doctors += " of ";
+                    doctors += accountsE.get(i).getNameOfClinic();
+                }
             }
         }
 

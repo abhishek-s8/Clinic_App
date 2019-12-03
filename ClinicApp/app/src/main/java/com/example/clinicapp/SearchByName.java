@@ -25,7 +25,7 @@ public class SearchByName extends AppCompatActivity {
         EditText name = (EditText)findViewById(R.id.editText11);
 
         if(name.getText().toString().equals("")){
-            Toast.makeText(SearchByName.this, "Fail, you haven't input anything", Toast.LENGTH_LONG).show();
+            Toast.makeText(SearchByName.this, "Fail, you haven't inout anything", Toast.LENGTH_LONG).show();
             name.setText("");
             return;
         }
@@ -47,7 +47,7 @@ public class SearchByName extends AppCompatActivity {
             display += "Name: " + clinic.getName() + "\nAddress: " + clinic.getAddress() + "\nRate: " + clinic.getRate();
         }
         else{
-            display = "";
+            display = "Sorry, this clinic doesn't exist";
         }
         name.setText("");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -59,6 +59,5 @@ public class SearchByName extends AppCompatActivity {
         });
         AlertDialog b = builder.create();
         b.show();
-        finish();
     }
 }

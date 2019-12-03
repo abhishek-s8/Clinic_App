@@ -67,11 +67,16 @@ public class MakeAppointment extends AppCompatActivity {
         String month = twoDigits(String.valueOf(m));
         String day = twoDigits(String.valueOf(d));
         String time = String.valueOf(y) + month + day;
-        dataBase.addAppointment(userName, time, nameOfE.getText().toString());
-        dataBase.addAppointmentEmployee(nameOfE.getText().toString());
-        Toast.makeText(MakeAppointment.this, "Your made an appointment at " + month + "/" + day + "/" + y, Toast.LENGTH_LONG).show();
-        finish();
-
+        boolean success = dataBase.addAppointment(userName, time, nameOfE.getText().toString());
+        if(success) {
+            dataBase.addAppointmentEmployee(nameOfE.getText().toString());
+            Toast.makeText(MakeAppointment.this, "Your made an appointment at " + month + "/" + day + "/" + y, Toast.LENGTH_LONG).show();
+            finish();
+        }
+        else{
+            Toast.makeText(MakeAppointment.this, "Sorry, you can't make an appointment at " + month + "/" + day + "/" + y, Toast.LENGTH_LONG).show();
+            finish();
+        }
     }
 
     private String twoDigits(String s){

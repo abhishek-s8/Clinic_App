@@ -78,7 +78,7 @@ public class AddWorkingHourEnd extends AppCompatActivity {
             boolean success = dataBase.addWorkingHour(workingTimeStart, workingTimeEnd, userName);
 
             if(success){
-                Toast.makeText(AddWorkingHourEnd.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddWorkingHourEnd.this, "Complete", Toast.LENGTH_LONG).show();
                 dataBase.addWorkingHour2Clinic(userName, employee.getNameOfClinic());
                 finish();
             }

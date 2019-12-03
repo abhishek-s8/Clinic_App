@@ -32,7 +32,7 @@ public class DeleteService extends AppCompatActivity {
         else{
             boolean success = dataBase.deleteService(userInput.getText().toString());
             if(success){
-                Toast.makeText(DeleteService.this, "Success!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DeleteService.this, "Complete", Toast.LENGTH_LONG).show();
             }
             else{
                 Toast.makeText(DeleteService.this, "This service doesn't exist", Toast.LENGTH_LONG).show();
