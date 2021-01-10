@@ -3,5 +3,4 @@ A Walk-In Clinics Service App - The application addresses the need for people to
 
 Members: Abdullah Morrison, Abhishek Saravanabavan
 
-Build Status[![BuildStatus](https://circleci.com/gh/abhishek-s8/SEG2105_ClinicApp.png?branch=master)](https://circleci.com/gh/abhishek-s8/SEG2105_ClinicApp)
-
+Build Status[![BuildStatus](https://circleci.com/gh/abhishek-s8/Clinic_App.png?branch=master)](https://circleci.com/gh/abhishek-s8/Clinic_App)
